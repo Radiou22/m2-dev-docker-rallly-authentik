@@ -83,3 +83,13 @@ docker compose ps
 docker compose logs -f traefik authentik_server authentik_worker
 docker compose down  # conserve les données
 ```
+
+Le workflow `.github/workflows/ci.yml` vérifie le dépôt puis construit l'image Docker
+du fork sur les push et les pull requests vers `main`. Il peut aussi être lancé
+manuellement depuis GitHub Actions. Le checkout initialise récursivement les
+sous-modules à la révision enregistrée dans Infra.
+
+Le build utilise `rallly/apps/web/Dockerfile`, le contexte `rallly` et
+`SELF_HOSTED=true`, pour une image Linux amd64 nommée `rallly-fork:<commit Infra>`.
+Les couches sont mises en cache dans GitHub Actions. L'image est chargée dans le
+runner pour la durée du job ; elle n'est pas publiée dans un registre.

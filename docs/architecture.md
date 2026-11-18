@@ -1,4 +1,4 @@
-# Architecture cible
+# Architecture
 
 ## Vue logique
 
@@ -6,25 +6,28 @@
 Navigateur
    |
    v
-Traefik (point d'entrée HTTP/HTTPS)
+Traefik (point d'entrée HTTP local :80)
    |------------------------|
    v                        v
 Authentik                  Rallly
    |                        |
    v                        v
 PostgreSQL Authentik       Base de données Rallly
-   |
-Redis (si requis par la version Authentik retenue)
 
 SMTP de laboratoire : utilisé pour tester les invitations, si nécessaire.
 ```
 
-Ce schéma est conceptuel. Les services, dépendances et exigences exactes seront ajustés selon les versions officielles retenues.
+Le Compose définit les services `traefik`, `rallly_selfhosted`, `rallly_db`,
+`authentik_server`, `authentik_worker` et `authentik_db`. Authentik utilise PostgreSQL
+sans Redis dans la version retenue.
 
 ## Principes
 
-- Un point d'entrée web via le reverse proxy.
-- Les bases de données restent sur des réseaux Docker internes et ne sont pas publiées directement.
+- Seul Traefik publie le port HTTP de la stack ; les applications et les bases ne publient aucun port.
+- Traefik route `rallly.localhost` vers Rallly sur 3000 et `authentik.localhost` vers Authentik sur 9000.
+- Le réseau `proxy` relie Traefik aux deux applications. `rallly_backend` relie Rallly à sa base ; `authentik_backend` relie le serveur et le worker Authentik à leur base.
+- Les deux noms publics sont des alias de Traefik dans Docker : les échanges OIDC de Rallly passent par ce même point d'entrée.
+- Le routage est déclaré dans `docker/traefik/dynamic/routes.yaml`, monté en lecture seule ; aucun accès au socket Docker n'est requis.
 - Des volumes nommés assurent la persistance.
 - Les secrets sont injectés depuis l'environnement et ne sont pas intégrés aux images.
 - Le déploiement local et la VM utilisent autant que possible le même Compose et les mêmes images ; les écarts sont documentés.
@@ -34,7 +37,9 @@ Ce schéma est conceptuel. Les services, dépendances et exigences exactes seron
 ## Environnements
 
 ### Local
-Docker Compose sur macOS. Les noms de domaine et le TLS local seront décidés à l'étape 2.
+Docker Compose sur macOS, avec `http://rallly.localhost` et `http://authentik.localhost`.
+Le port HTTP se configure avec `TRAEFIK_HTTP_PORT` dans `.env`. Le TLS n'est pas
+configuré dans cette stack locale.
 
 ### VM Énov
 Déploiement après obtention des accès, configuration du VPN NetBird, accès SSH et création de la VM selon la documentation publique du campus. L'URL et les comptes de démonstration seront ajoutés au README une fois validés.

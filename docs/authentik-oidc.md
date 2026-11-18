@@ -1,15 +1,77 @@
 # Authentik — OIDC, policies et invitation externe
 
-À compléter avec les noms de menus et paramètres exacts de la version utilisée.
+## Configuration OIDC
 
-## Checklist OIDC
+Le Compose transmet à Rallly `EMAIL_LOGIN_ENABLED=false`, `OIDC_NAME`,
+`OIDC_CLIENT_ID`, `OIDC_CLIENT_SECRET` et l'URL de découverte construite à partir
+de `AUTHENTIK_BASE_URL`. Les comptes Rallly sont créés à la
+première connexion SSO (`REGISTRATION_ENABLED=true`). La connexion par mail est masquée
+et le fork redirige automatiquement vers Authentik.
 
-- [ ] Créer/configurer l'application et le fournisseur OIDC pour Rallly.
-- [ ] Définir l'URI de redirection exacte de Rallly.
-- [ ] Vérifier les scopes et claims requis par Rallly.
-- [ ] Configurer les paramètres correspondants côté Rallly.
-- [ ] Tester la connexion avec un compte de test.
-- [ ] Capturer les preuves sans exposer de secrets.
+Le worker charge `docker/authentik/blueprints/rallly.yaml`, qui crée :
+
+- l'application de slug `rallly` et un fournisseur confidentiel en Authorization Code ;
+- les scopes `openid`, `profile`, `email`, avec les mappings Authentik par défaut ;
+- une clé de signature et les flows d'autorisation et d'invalidation standards ;
+- la redirection stricte `${RALLLY_BASE_URL}/api/auth/callback/oidc`, utilisée par ce fork.
+
+Les secrets sont lus avec les [tags de blueprint Authentik](https://docs.goauthentik.io/customize/blueprints/v1/tags/).
+Le worker [charge automatiquement les blueprints locaux](https://docs.goauthentik.io/customize/blueprints/).
+Rallly utilise PKCE. Le healthcheck du serveur attend que l'URL de découverte soit
+disponible avant de démarrer Rallly.
+
+Valeurs locales par défaut :
+
+| Paramètre | Valeur |
+| --- | --- |
+| URL Rallly | `http://rallly.localhost` |
+| URL Authentik | `http://authentik.localhost` |
+| Découverte | `http://authentik.localhost/application/o/rallly/.well-known/openid-configuration` |
+| Callback | `http://rallly.localhost/api/auth/callback/oidc` |
+| Client ID | `rallly` |
+
+`RALLLY_HOST` et `AUTHENTIK_HOST` sont des alias DNS Docker de Traefik. Le navigateur
+doit résoudre ces mêmes noms vers la machine Docker ; ajouter
+`127.0.0.1 rallly.localhost authentik.localhost` au fichier hosts si nécessaire.
+Rallly contacte donc aussi Authentik via Traefik, avec la même URL publique et le
+même émetteur OIDC que le navigateur. Traefik conserve le Host et transmet les
+en-têtes de proxy attendus par Authentik.
+
+`RALLLY_BASE_URL` et `AUTHENTIK_BASE_URL` reprennent les domaines dans `.env`.
+Si `TRAEFIK_HTTP_PORT` diffère de 80, ajouter ce port aux deux URL publiques.
+Traefik écoute sur le même port dans Docker et sur la machine pour conserver le
+même émetteur selon l'origine de la requête.
+Les ports internes des applications restent 3000 et 9000, sans publication directe.
+Ce paramétrage HTTP est destiné au développement local.
+
+## Vérification
+
+```bash
+docker compose up -d --build --wait
+docker compose ps
+docker compose logs --tail=100 traefik authentik_worker rallly_selfhosted
+```
+
+Définir le mot de passe initial d'`akadmin` depuis l'interface Authentik si nécessaire.
+`AUTHENTIK_BOOTSTRAP_EMAIL` ne s'applique qu'à l'initialisation : sur une base existante,
+renseigner une adresse mail dans le profil de l'utilisateur Authentik.
+Les comptes sans adresse mail ne peuvent pas être créés dans Rallly.
+
+Ouvrir `http://rallly.localhost/login`, se connecter dans Authentik avec un compte
+possédant une adresse mail, puis vérifier le retour à une session Rallly authentifiée.
+
+Après modification du client ID, du secret, des domaines, du port public ou de
+`RALLLY_BASE_URL` (sans slash final),
+recréer les services et réappliquer explicitement le blueprint : une modification
+d'environnement seule ne change pas le fichier surveillé par Authentik.
+
+```bash
+docker compose up -d
+docker compose exec authentik_worker ak apply_blueprint custom/rallly.yaml
+```
+
+Le formulaire de connexion peut être réactivé avec `EMAIL_LOGIN_ENABLED=true` ;
+cela demande un SMTP fonctionnel pour l'envoi des codes par mail.
 
 ## Checklist des droits
 

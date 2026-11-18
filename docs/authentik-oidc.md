@@ -4,7 +4,7 @@
 
 Le Compose transmet à Rallly `EMAIL_LOGIN_ENABLED=false`, `OIDC_NAME`,
 `OIDC_CLIENT_ID`, `OIDC_CLIENT_SECRET` et l'URL de découverte construite à partir
-de `AUTHENTIK_HOST` et `AUTHENTIK_HTTP_PORT`. Les comptes Rallly sont créés à la
+de `AUTHENTIK_BASE_URL`. Les comptes Rallly sont créés à la
 première connexion SSO (`REGISTRATION_ENABLED=true`). La connexion par mail est masquée
 et le fork redirige automatiquement vers Authentik.
 
@@ -24,17 +24,24 @@ Valeurs locales par défaut :
 
 | Paramètre | Valeur |
 | --- | --- |
-| URL Rallly | `http://localhost:3000` |
-| URL Authentik | `http://authentik.localhost:9000` |
-| Découverte | `http://authentik.localhost:9000/application/o/rallly/.well-known/openid-configuration` |
-| Callback | `http://localhost:3000/api/auth/callback/oidc` |
+| URL Rallly | `http://rallly.localhost` |
+| URL Authentik | `http://authentik.localhost` |
+| Découverte | `http://authentik.localhost/application/o/rallly/.well-known/openid-configuration` |
+| Callback | `http://rallly.localhost/api/auth/callback/oidc` |
 | Client ID | `rallly` |
 
-`AUTHENTIK_HOST` est aussi un alias DNS Docker du serveur. Le navigateur doit
-résoudre ce même nom vers la machine Docker ; ajouter
-`127.0.0.1 authentik.localhost` au fichier hosts si nécessaire. `localhost` seul ne
-convient pas comme nom Authentik pour OIDC : dans Rallly, il désignerait Rallly lui-même.
-Le port HTTP interne suit `AUTHENTIK_HTTP_PORT` pour conserver les mêmes URLs.
+`RALLLY_HOST` et `AUTHENTIK_HOST` sont des alias DNS Docker de Traefik. Le navigateur
+doit résoudre ces mêmes noms vers la machine Docker ; ajouter
+`127.0.0.1 rallly.localhost authentik.localhost` au fichier hosts si nécessaire.
+Rallly contacte donc aussi Authentik via Traefik, avec la même URL publique et le
+même émetteur OIDC que le navigateur. Traefik conserve le Host et transmet les
+en-têtes de proxy attendus par Authentik.
+
+`RALLLY_BASE_URL` et `AUTHENTIK_BASE_URL` reprennent les domaines dans `.env`.
+Si `TRAEFIK_HTTP_PORT` diffère de 80, ajouter ce port aux deux URL publiques.
+Traefik écoute sur le même port dans Docker et sur la machine pour conserver le
+même émetteur selon l'origine de la requête.
+Les ports internes des applications restent 3000 et 9000, sans publication directe.
 Ce paramétrage HTTP est destiné au développement local.
 
 ## Vérification
@@ -42,7 +49,7 @@ Ce paramétrage HTTP est destiné au développement local.
 ```bash
 docker compose up -d --build --wait
 docker compose ps
-docker compose logs --tail=100 authentik_worker rallly_selfhosted
+docker compose logs --tail=100 traefik authentik_worker rallly_selfhosted
 ```
 
 Définir le mot de passe initial d'`akadmin` depuis l'interface Authentik si nécessaire.
@@ -50,10 +57,11 @@ Définir le mot de passe initial d'`akadmin` depuis l'interface Authentik si né
 renseigner une adresse mail dans le profil de l'utilisateur Authentik.
 Les comptes sans adresse mail ne peuvent pas être créés dans Rallly.
 
-Ouvrir `http://localhost:3000/login`, se connecter dans Authentik avec un compte
+Ouvrir `http://rallly.localhost/login`, se connecter dans Authentik avec un compte
 possédant une adresse mail, puis vérifier le retour à une session Rallly authentifiée.
 
-Après modification du client ID, du secret ou de `RALLLY_BASE_URL` (sans slash final),
+Après modification du client ID, du secret, des domaines, du port public ou de
+`RALLLY_BASE_URL` (sans slash final),
 recréer les services et réappliquer explicitement le blueprint : une modification
 d'environnement seule ne change pas le fichier surveillé par Authentik.
 

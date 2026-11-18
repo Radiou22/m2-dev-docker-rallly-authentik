@@ -1,4 +1,5 @@
 # Les secrets sont lus dans l'environnement du worker, jamais stockés ici.
+# Le callback utilise l'URL publique de Traefik, également injectée dans Rallly.
 version: 1
 metadata:
   name: Rallly - OIDC

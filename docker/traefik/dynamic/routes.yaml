@@ -1,0 +1,24 @@
+http:
+  routers:
+    rallly:
+      rule: 'Host(`{{ env "RALLLY_HOST" }}`)'
+      entryPoints:
+        - web
+      service: rallly
+
+    authentik:
+      rule: 'Host(`{{ env "AUTHENTIK_HOST" }}`)'
+      entryPoints:
+        - web
+      service: authentik
+
+  services:
+    rallly:
+      loadBalancer:
+        servers:
+          - url: http://rallly_selfhosted:3000
+
+    authentik:
+      loadBalancer:
+        servers:
+          - url: http://authentik_server:9000

@@ -51,6 +51,12 @@ aux deux URL publiques, puis ouvrir `http://rallly.localhost:8088`.
 Au premier accès à Authentik, définir le mot de passe du compte `akadmin`.
 Son adresse mail initiale est définie par `AUTHENTIK_BOOTSTRAP_EMAIL` ; chaque
 utilisateur doit avoir une adresse mail renseignée pour se connecter à Rallly.
+
+Compte administrateur de l'environnement local :
+
+- Adresse mail : `akadmin@test.fr`
+- Mot de passe : `a`
+
 Les domaines, le port HTTP public, les versions et la base Authentik se règlent dans `.env`.
 Cette version utilise PostgreSQL sans Redis. Le worker n'a pas accès au socket Docker ;
 les éventuels outposts externes doivent être déployés manuellement.

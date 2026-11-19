@@ -110,8 +110,13 @@ Le build utilise `rallly/apps/web/Dockerfile`, le contexte `rallly` et
 Les couches sont mises en cache dans GitHub Actions. L'image est chargée dans le
 runner pour la durée du job ; elle n'est pas publiée dans un registre.
 
-## Features ajoutées
-- **Feature libre** : (UI/UX) correction de l'alignement de la zone d'entrée du code de vérification de l'adresse email et de l'overlapping de certains champs
+## Fonctionnalités Rallly
+
+- **Catalogue** — quota de votes « Oui » par créneau et blocage des votes sur les créneaux passés.
+- **Feature libre** — afficher le nom complet d’un participant au survol dans le tableau des votes.
+- **Amélioration complémentaire** — centrer les cases de saisie du code de vérification reçu par e-mail.
+
+Voir [les scénarios de démonstration et les captures](docs/features.md).
 
 ## Hébergement de l'instance de test pour démo
 
@@ -142,6 +147,8 @@ via le tunnel avant d'afficher leurs liens :
 - Administration : `https://xxxx.ngrok-free.app/authentik/if/admin/`
 - Callback OIDC : `https://xxxx.ngrok-free.app/api/auth/callback/oidc`
 
+Suivre la [recette SSO, groupes et invitation externe](docs/authentik-oidc.md#démo-navigateur) pour la soutenance.
+
 Garder le terminal ouvert pendant la démo. **Ctrl+C** arrête le processus ngrok
 et restaure automatiquement l'origine précédente dans `.env`, les conteneurs et
 Authentik. Les secrets et les appartenances aux groupes sont conservés. En cas
@@ -163,11 +170,11 @@ Les tests du lanceur ne créent aucun tunnel public et ne modifient pas Docker :
 python3 -B scripts/test_start_tunnel.py
 ```
 
-# Features
+## Captures des fonctionnalités
 
-- Overlap d'éléments
-  ![overlap](docs/screenshots/overlap.png)
-- Quota
-  ![quota](docs/screenshots/quota.png)
-- Blocage des votes après échéance
-  ![echeance](docs/screenshots/blocage-votes.png)
+- Affichage du nom complet au survol
+  ![Nom complet affiché au survol](docs/screenshots/overlap.png)
+- Refus d’un vote lorsque le quota est atteint
+  ![Message de refus sur un créneau complet](docs/screenshots/quota.png)
+- Blocage des votes sur les créneaux passés
+  ![Créneau passé non sélectionnable](docs/screenshots/blocage-votes.png)

@@ -113,16 +113,6 @@ runner pour la durée du job ; elle n'est pas publiée dans un registre.
 ## Features ajoutées
 - **Feature libre** : (UI/UX) correction de l'alignement de la zone d'entrée du code de vérification de l'adresse email et de l'overlapping de certains champs
 
-## Comptes sur instance de test
-
-## Admin
-User: 'akadmin@test.fr'
-Mot de passe: `dT9BiRwse2RQGptw`
-
-### Compte qui n'a pas accès à rallly
-User: `test@test.fr`
-Mot de passe: `gudeMZGAUSbyIjQY`
-
 ## Hébergement de l'instance de test pour démo
 
 Prérequis : Python 3.10 ou supérieur, Docker démarré, `.env` renseigné et un compte
@@ -172,3 +162,8 @@ Les tests du lanceur ne créent aucun tunnel public et ne modifient pas Docker :
 ```shell
 python3 -B scripts/test_start_tunnel.py
 ```
+
+# Features
+
+- Overlap d'éléments
+  ![overlap](docs/screenshots/overlap.png)

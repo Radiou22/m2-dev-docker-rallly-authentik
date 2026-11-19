@@ -31,7 +31,7 @@ entries:
       invalidation_flow: !Find [authentik_flows.flow, [slug, default-provider-invalidation-flow]]
       redirect_uris:
         - matching_mode: strict
-          url: !Format ["%s/api/auth/callback/oidc", !Env RALLLY_BASE_URL]
+          url: !Format ["%s/api/auth/callback/oidc", !Env PUBLIC_BASE_URL]
       signing_key: !Find [authentik_crypto.certificatekeypair, [name, authentik Self-signed Certificate]]
       property_mappings:
         - !Find [authentik_providers_oauth2.scopemapping, [managed, goauthentik.io/providers/oauth2/scope-openid]]
@@ -39,9 +39,46 @@ entries:
         - !Find [authentik_providers_oauth2.scopemapping, [managed, goauthentik.io/providers/oauth2/scope-email]]
 
   - model: authentik_core.application
+    id: rallly-application
     identifiers:
       slug: rallly
     attrs:
       name: Rallly
       provider: !KeyOf rallly-provider
-      meta_launch_url: !Env RALLLY_BASE_URL
+      meta_launch_url: !Env PUBLIC_BASE_URL
+      policy_engine_mode: all
+
+  - model: authentik_core.group
+    identifiers:
+      name: rallly-allowed
+    attrs:
+      is_superuser: false
+
+  - model: authentik_core.group
+    identifiers:
+      name: rallly-denied
+    attrs:
+      is_superuser: false
+
+  - model: authentik_policies_expression.expressionpolicy
+    id: rallly-access-policy
+    identifiers:
+      name: rallly-access
+    attrs:
+      expression: |
+        if ak_is_group_member(request.user, name="rallly-denied"):
+            return False
+
+        if request.user.is_superuser:
+            return True
+
+        return ak_is_group_member(request.user, name="rallly-allowed")
+
+  - model: authentik_policies.policybinding
+    identifiers:
+      target: !KeyOf rallly-application
+      policy: !KeyOf rallly-access-policy
+      order: 0
+    attrs:
+      enabled: true
+      failure_result: false

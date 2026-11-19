@@ -21,21 +21,46 @@ docker compose logs -f traefik authentik_server authentik_worker
 ```
 
 Rallly est accessible sur <http://rallly.localhost> et Authentik sur
-<http://authentik.localhost>, via Traefik sur le port 80. Au premier accès,
-configurer le compte `akadmin`.
+<http://rallly.localhost/authentik/>, via Traefik sur le port 80. Au premier accès,
+configurer `akadmin` sur <http://rallly.localhost/authentik/if/flow/initial-setup/>.
 Rallly utilise Authentik pour la connexion ; voir [la configuration OIDC](authentik-oidc.md).
 
 Seul Traefik publie un port. Les accès directs aux applications et aux bases
 ne sont plus exposés. Si nécessaire, ajouter
-`127.0.0.1 rallly.localhost authentik.localhost` au fichier hosts.
+`127.0.0.1 rallly.localhost` au fichier hosts.
 
-Pour changer le port HTTP public, modifier `TRAEFIK_HTTP_PORT` dans `.env` et ajouter
-ce port à `RALLLY_BASE_URL` et `AUTHENTIK_BASE_URL`. Après changement, mettre à jour le callback :
+Pour changer le port HTTP local, modifier `TRAEFIK_HTTP_PORT` dans `.env`, puis
+appliquer l'origine avec ce port. Par exemple, pour le port 8088 :
 
 ```bash
-docker compose up -d --wait
-docker compose exec authentik_worker ak apply_blueprint custom/rallly.yaml
+python3 scripts/set-public-url.py http://rallly.localhost:8088
 ```
+
+## Démo avec un tunnel public
+
+Avec Python 3.10 ou supérieur, ngrok installé et son authtoken configuré :
+
+```bash
+python3 scripts/start-tunnel.py
+```
+
+Le script lance un seul tunnel vers le port Traefik configuré, détecte son URL,
+met à jour `.env`, synchronise Authentik et affiche les liens après vérification.
+L'agent ngrok utilise TLS sur 443/TCP. Le script récupère l'URL dans l'événement
+JSON de démarrage du tunnel, puis vérifie les applications et l'émetteur OIDC.
+Rallly est à la racine de cette URL, Authentik sous `/authentik/`.
+**Ctrl+C** arrête le tunnel et restaure l'origine précédente.
+
+Utiliser `--verbose` pour afficher les logs ngrok et `--timeout 120` pour augmenter
+le délai d'attente. Pour un tunnel lancé séparément, appliquer son URL avec
+`python3 scripts/set-public-url.py https://xxxx.ngrok-free.app`.
+Le retour local manuel reste disponible avec
+`python3 scripts/set-public-url.py http://rallly.localhost`.
+
+Si ngrok s'arrête avant de fournir une URL, consulter `--verbose`, lancer
+`ngrok config check` et vérifier que l'authtoken est configuré avec
+`ngrok config add-authtoken TON_TOKEN`. Les vérifications HTTP du script utilisent
+l'en-tête ngrok prévu pour les clients automatisés.
 
 ## Arrêt
 

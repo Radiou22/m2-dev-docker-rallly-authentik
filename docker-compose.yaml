@@ -4,6 +4,9 @@ x-authentik-environment: &authentik-environment
   AUTHENTIK_POSTGRESQL__USER: ${AUTHENTIK_DB_USER:-authentik}
   AUTHENTIK_POSTGRESQL__PASSWORD: ${AUTHENTIK_DB_PASSWORD:?Définir AUTHENTIK_DB_PASSWORD dans .env}
   AUTHENTIK_SECRET_KEY: ${AUTHENTIK_SECRET_KEY:?Définir AUTHENTIK_SECRET_KEY dans .env}
+  AUTHENTIK_WEB__PATH: /authentik/
+  AUTHENTIK_WEB__BASE_URL: ${PUBLIC_BASE_URL:-http://rallly.localhost}
+  PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://rallly.localhost}
 
 services:
   traefik:
@@ -15,8 +18,7 @@ services:
       - --providers.file.watch=true
       - --ping=true
     environment:
-      RALLLY_HOST: ${RALLLY_HOST:-rallly.localhost}
-      AUTHENTIK_HOST: ${AUTHENTIK_HOST:-authentik.localhost}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://rallly.localhost}
     ports:
       - "${TRAEFIK_HTTP_PORT:-80}:${TRAEFIK_HTTP_PORT:-80}"
     volumes:
@@ -24,8 +26,8 @@ services:
     networks:
       proxy:
         aliases:
-          - ${RALLLY_HOST:-rallly.localhost}
-          - ${AUTHENTIK_HOST:-authentik.localhost}
+          # Résolution de l'origine de développement depuis Rallly pour OIDC.
+          - rallly.localhost
     healthcheck:
       test: ["CMD", "traefik", "healthcheck", "--ping"]
       interval: 10s
@@ -65,12 +67,12 @@ services:
     environment:
       - DATABASE_URL=postgres://postgres:${RALLLY_DATABASE_PASSWORD:-postgres}@rallly_db/rallly
       - SECRET_PASSWORD=${RALLLY_SECRET:?Définir RALLLY_SECRET dans .env}
-      - NEXT_PUBLIC_BASE_URL=${RALLLY_BASE_URL:-http://rallly.localhost}
+      - NEXT_PUBLIC_BASE_URL=${PUBLIC_BASE_URL:-http://rallly.localhost}
       - SUPPORT_EMAIL=${RALLLY_SUPPORT_EMAIL:-support@example.com}
       - EMAIL_LOGIN_ENABLED=${EMAIL_LOGIN_ENABLED:-false}
       - REGISTRATION_ENABLED=true
       - OIDC_NAME=${OIDC_NAME:-Authentik}
-      - OIDC_DISCOVERY_URL=${AUTHENTIK_BASE_URL:-http://authentik.localhost}/application/o/rallly/.well-known/openid-configuration
+      - OIDC_DISCOVERY_URL=${PUBLIC_BASE_URL:-http://rallly.localhost}/authentik/application/o/rallly/.well-known/openid-configuration
       - OIDC_CLIENT_ID=${OIDC_CLIENT_ID:-rallly}
       - OIDC_CLIENT_SECRET=${OIDC_CLIENT_SECRET:?Définir OIDC_CLIENT_SECRET dans .env}
     env_file:
@@ -121,7 +123,7 @@ services:
         - |
           import urllib.request
 
-          url = 'http://127.0.0.1:9000/application/o/rallly/.well-known/openid-configuration'
+          url = 'http://127.0.0.1:9000/authentik/application/o/rallly/.well-known/openid-configuration'
           urllib.request.urlopen(url, timeout=5).read()
       interval: 10s
       timeout: 10s
@@ -143,7 +145,6 @@ services:
     environment:
       <<: *authentik-environment
       AUTHENTIK_BOOTSTRAP_EMAIL: ${AUTHENTIK_BOOTSTRAP_EMAIL:-admin@example.com}
-      RALLLY_BASE_URL: ${RALLLY_BASE_URL:-http://rallly.localhost}
       OIDC_CLIENT_ID: ${OIDC_CLIENT_ID:-rallly}
       OIDC_CLIENT_SECRET: ${OIDC_CLIENT_SECRET:?Définir OIDC_CLIENT_SECRET dans .env}
     volumes:

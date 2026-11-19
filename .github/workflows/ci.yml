@@ -28,6 +28,9 @@ jobs:
       - name: Ensure example environment file exists
         run: test -f .env.example
 
+      - name: Check tunnel launcher
+        run: python3 -B scripts/test_start_tunnel.py
+
       - name: Check required project documentation
         shell: bash
         run: |

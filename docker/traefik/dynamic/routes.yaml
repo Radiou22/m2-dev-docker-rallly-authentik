@@ -1,16 +1,61 @@
 http:
   routers:
     rallly:
-      rule: 'Host(`{{ env "RALLLY_HOST" }}`)'
+      rule: PathPrefix(`/`)
+      priority: 1
       entryPoints:
         - web
       service: rallly
+      middlewares:
+        - public-origin
 
     authentik:
-      rule: 'Host(`{{ env "AUTHENTIK_HOST" }}`)'
+      rule: PathPrefix(`/authentik/`)
+      priority: 100
       entryPoints:
         - web
       service: authentik
+      middlewares:
+        - public-origin
+
+    authentik-slash:
+      rule: Path(`/authentik`)
+      priority: 110
+      entryPoints:
+        - web
+      service: authentik
+      middlewares:
+        - authentik-slash
+
+    # Cette version d'Authentik génère encore certains liens SPA sans préfixe.
+    authentik-legacy-links:
+      rule: PathPrefix(`/flows/`) || PathPrefix(`/if/`)
+      priority: 90
+      entryPoints:
+        - web
+      service: authentik
+      middlewares:
+        - authentik-legacy-links
+
+  middlewares:
+    public-origin:
+      headers:
+        # L'origine HTTPS externe reste canonique derrière un tunnel HTTP local.
+        customRequestHeaders:
+          Host: '{{ (urlParse (env "PUBLIC_BASE_URL")).host }}'
+          X-Forwarded-Host: '{{ (urlParse (env "PUBLIC_BASE_URL")).host }}'
+          X-Forwarded-Proto: '{{ (urlParse (env "PUBLIC_BASE_URL")).scheme }}'
+
+    authentik-slash:
+      redirectRegex:
+        regex: '^https?://[^/]+/authentik$'
+        replacement: '{{ env "PUBLIC_BASE_URL" }}/authentik/'
+        permanent: true
+
+    authentik-legacy-links:
+      redirectRegex:
+        regex: '^https?://[^/]+/(flows|if)/([^?]*[^/?])/?(\?.*)?$'
+        replacement: '{{ env "PUBLIC_BASE_URL" }}/authentik/${1}/${2}/${3}'
 
   services:
     rallly:

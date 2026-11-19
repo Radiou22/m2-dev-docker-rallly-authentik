@@ -167,3 +167,7 @@ python3 -B scripts/test_start_tunnel.py
 
 - Overlap d'éléments
   ![overlap](docs/screenshots/overlap.png)
+- Quota
+  ![quota](docs/screenshots/quota.png)
+- Blocage des votes après échéance
+  ![echeance](docs/screenshots/blocage-votes.png)

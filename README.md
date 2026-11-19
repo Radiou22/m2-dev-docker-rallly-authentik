@@ -4,6 +4,10 @@ La stack construit notre fork depuis le sous-module `rallly` et lance Authentik
 (serveur et worker) avec une base PostgreSQL dédiée. Traefik est le point d'entrée
 HTTP commun aux deux applications. Les données sont conservées dans des volumes Docker.
 
+Le [scan commenté de l'image Docker Rallly](docs/scan-image-docker.md) présente
+les résultats du 19 novembre 2026, les corrections à prévoir et les limites
+retenues, avec les preuves brutes et un commentaire pour la soutenance.
+
 Avec Docker et Docker Compose 2.24 ou supérieur :
 
 ```shell
@@ -152,6 +156,35 @@ Pour afficher les journaux du tunnel ou augmenter le délai d'attente de 90 seco
 ```shell
 python3 scripts/start-tunnel.py --verbose --timeout 120
 ```
+
+Pour tester la vérification par code email avec Mailpit :
+
+```shell
+python3 scripts/start-tunnel.py --email-login
+```
+
+Cette option ajoute `docker-compose.email.yaml`, active le formulaire email de
+Rallly et configure son SMTP vers Mailpit. Authentik reste proposé sur la page
+de connexion. Saisir une adresse de test, par exemple `demo@example.com`, puis
+ouvrir [Mailpit](http://localhost:8025) sur le Mac pour récupérer le code et le
+recopier dans Rallly. Les emails sont capturés localement ; l'interface Mailpit
+est liée à `127.0.0.1` et n'est pas publiée par ngrok. La connexion email permet
+de tester Rallly directement, sans passer par les groupes d'accès Authentik.
+
+**Ctrl+C** rétablit le mode de connexion défini dans `.env`. Mailpit reste
+disponible pour consulter les emails de la démo. Pour le supprimer ensuite :
+
+```shell
+docker compose -f docker-compose.yaml -f docker-compose.email.yaml rm -sf mailpit
+```
+
+Le même mode fonctionne sans tunnel :
+
+```shell
+python3 scripts/set-public-url.py http://rallly.localhost --email-login
+```
+
+Revenir au mode habituel avec `python3 scripts/set-public-url.py http://rallly.localhost`.
 
 Si un tunnel a déjà été lancé manuellement avec
 `ngrok http 80`, son URL peut toujours être appliquée

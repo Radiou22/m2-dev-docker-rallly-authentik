@@ -1,0 +1,23 @@
+{
+  "node": "v24.22.2",
+  "uid": 100,
+  "gid": 101,
+  "packages": {
+    "/usr/local/lib/node_modules/npm/package.json": "11.19.1",
+    "/app/apps/web/node_modules/next/package.json": "16.4.2",
+    "/app/node_modules/prisma/package.json": "7.10.1"
+  },
+  "binaries": {
+    "/usr/bin/curl": true,
+    "/usr/bin/apt-get": true,
+    "/usr/bin/mount": true,
+    "/usr/lib/systemd/systemd-homed": false,
+    "/usr/sbin/krb5kdc": false,
+    "/usr/sbin/kadmind": false
+  },
+  "minizip_check": {
+    "stdout": "zlib1g:arm64\t1:1.2.13.dfsg-1\n",
+    "stderr": "dpkg-query: no packages found matching libminizip1\ndpkg-query: no packages found matching minizip\ndpkg-query: no packages found matching python3-pyminizip\n",
+    "exit_code": 1
+  }
+}

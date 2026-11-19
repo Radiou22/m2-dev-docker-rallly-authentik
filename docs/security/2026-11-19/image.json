@@ -1,0 +1,27 @@
+{
+  "scan_started_at": "2026-11-19T10:19:03.134945+00:00",
+  "scanner_image": "aquasec/trivy:0.76.2",
+  "image_id": "sha256:ea15a7e5ca754cef5a946d9fcb6f6c4e89cb21a96a4c61bd3802fd802655e0ce",
+  "tags": [
+    "infra-rallly_selfhosted:latest"
+  ],
+  "repo_digests": [
+    "infra-rallly_selfhosted@sha256:ea15a7e5ca754cef5a946d9fcb6f6c4e89cb21a96a4c61bd3802fd802655e0ce"
+  ],
+  "image_created_at": "2026-10-30T15:17:54.954335131Z",
+  "os": "linux",
+  "architecture": "arm64",
+  "image_size_bytes": 1356020904,
+  "runtime_user": "nextjs",
+  "infra_commit": "dd04156d38d7f42593b385b8f3ec5cfd6078b3b5",
+  "submodule_commit": "a8ced150729d5da033f5c5fa035d56347e9c71c5",
+  "provenance_note": "Git commits identify the working checkout, not an attested source-to-image relationship.",
+  "scanner_image_id": "sha256:8f6bb947dbc528902e11f2f5be52f7b519f6a39d5d148f41166f2040499768fb",
+  "scanner_repo_digests": [
+    "aquasec/trivy@sha256:8f6bb947dbc528902e11f2f5be52f7b519f6a39d5d148f41166f2040499768fb"
+  ],
+  "archive_sha256": "d4a74dba5224b6ef7aaa2861e01ae9133c19c46477db5e3056e71bcec19b5244",
+  "archive_size_bytes": 299966464,
+  "trivy_image_config_id": "sha256:9ceee4684a309a3dedc82bb3ea1c3a20b2cc06eb39ad6a7974a9c82d4a04a2a8",
+  "identifier_note": "Docker reports the OCI index digest; Trivy reports its selected image configuration digest. Both are verified against the exported archive."
+}

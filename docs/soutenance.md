@@ -14,6 +14,10 @@ Le sujet prévoit 15 minutes de présentation/démonstration, puis 3 minutes de 
 8. Démonstration des fonctionnalités.
 9. Mesures de sécurité, limites connues et pistes d'amélioration.
 
+Pour le point sécurité, utiliser le [scan commenté de l'image Docker](scan-image-docker.md) :
+résultats chiffrés, alerte critique contextualisée, corrections à prévoir et
+limites assumées. Une proposition de commentaire oral figure à la fin du rapport.
+
 ## Vérifications avant le jour J
 
 - [ ] Dépôt public et README testés depuis un clone propre.

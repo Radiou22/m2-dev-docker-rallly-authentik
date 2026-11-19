@@ -1,0 +1,36 @@
+{
+  "index": {
+    "schemaVersion": 2,
+    "mediaType": "application/vnd.oci.image.index.v1+json",
+    "manifests": [
+      {
+        "mediaType": "application/vnd.oci.image.index.v1+json",
+        "digest": "sha256:ea15a7e5ca754cef5a946d9fcb6f6c4e89cb21a96a4c61bd3802fd802655e0ce",
+        "size": 856
+      }
+    ]
+  },
+  "docker_manifest": [
+    {
+      "Config": "blobs/sha256/9ceee4684a309a3dedc82bb3ea1c3a20b2cc06eb39ad6a7974a9c82d4a04a2a8",
+      "RepoTags": null,
+      "Layers": [
+        "blobs/sha256/f791e47cf52abf7b364878f2141547e3781072e437f599f6632849d88fca8ca4",
+        "blobs/sha256/c50b9d4fbd2ff4a58e1b00e23ae88ace78a53cbfe7811eeb77565e5fcd8ac058",
+        "blobs/sha256/8114fa05b7a37f8a343cab43efa68fbb4152869dd29360a3fd5ce5bce28cf241",
+        "blobs/sha256/c254a073947ebce66887fcd82af031c424e7bc401fc16fda7a7a5ee9070a1521",
+        "blobs/sha256/5bdd8162f8496245f4170840072f8ebf8f78258dc9fd4fc58785916e22a2853c",
+        "blobs/sha256/c1c07c28c87b55d3d847cd6e560616c3bfea62d3cf0fde58d85a46f01b3432fb",
+        "blobs/sha256/f8306a0780ea6870ef4f6d939192985835d988caede19d3a1f11717340d2355b",
+        "blobs/sha256/d0c82043a63e76c6ad8e8693f20c1328184da1d70e1b45b1ad3c149cadf1b83e",
+        "blobs/sha256/62a419c6dc192eef053f609c102cf32f91177eae7744d085fc3a11fff971580b",
+        "blobs/sha256/70a660bf2236ab1d03ee0a39f5fd3bd94ab3f9efb0cde6a25d2e92b89b8d7d36",
+        "blobs/sha256/65bb5063959d5ae5ff126f192cdd317a883a114fa8bcbd597588b92f847634dd",
+        "blobs/sha256/d218636ce5091219acb5bf346f193b5a07e3f801d9cf12dacd512c1d17ef7d44",
+        "blobs/sha256/ec3c5bea7a5f3ac22d43f04c76bb25883e33a7bb10df060958afa714577c3891",
+        "blobs/sha256/930e06b82ee951d9b68ea012c0e909b2810ca26aba439b10caf2bd7d2528a2a6",
+        "blobs/sha256/1d8eb38732b2bf13ece8a5e02381120a486280a007f8a1cc4c227f0781fe45cd"
+      ]
+    }
+  ]
+}

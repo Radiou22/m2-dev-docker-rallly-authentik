@@ -1,0 +1,27 @@
+services:
+  rallly_selfhosted:
+    depends_on:
+      mailpit:
+        condition: service_healthy
+    environment:
+      EMAIL_LOGIN_ENABLED: "true"
+      EMAIL_PROVIDER: smtp
+      SMTP_HOST: mailpit
+      SMTP_PORT: "1025"
+      SMTP_SECURE: "false"
+      SMTP_REJECT_UNAUTHORIZED: "true"
+      SMTP_USER: ""
+      SMTP_PWD: ""
+      NOREPLY_EMAIL: noreply@example.com
+
+  mailpit:
+    image: axllent/mailpit:v1.31.5
+    ports:
+      - "127.0.0.1:8025:8025"
+    networks:
+      - rallly_backend
+    healthcheck:
+      test: ["CMD", "/mailpit", "readyz"]
+      interval: 5s
+      timeout: 5s
+      retries: 5

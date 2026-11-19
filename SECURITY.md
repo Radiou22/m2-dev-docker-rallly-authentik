@@ -11,3 +11,7 @@
 - En cas de fuite d'un secret : le révoquer/renouveler immédiatement, puis supprimer sa présence dans l'historique Git si nécessaire.
 
 Les mesures ci-dessus sont des exigences de travail ; elles ne signifient pas que la stack est déjà durcie.
+
+Le [scan commenté de l'image Rallly du 19 novembre 2026](docs/scan-image-docker.md)
+conserve les résultats bruts, leur interprétation, les correctifs à prévoir et
+les limites de l'audit. Il ne constitue pas une validation de mise en production.

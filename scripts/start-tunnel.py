@@ -152,9 +152,14 @@ def read_configuration(root: Path) -> tuple[str, str]:
     return f"http://127.0.0.1:{port}", previous_origin
 
 
-def apply_public_url(root: Path, origin: str):
+def apply_public_url(root: Path, origin: str, email_login: bool = False):
+    command = [sys.executable, str(root / "scripts" / "set-public-url.py"), origin]
+
+    if email_login:
+        command.append("--email-login")
+
     subprocess.run(
-        [sys.executable, str(root / "scripts" / "set-public-url.py"), origin],
+        command,
         cwd=root,
         stdout=subprocess.PIPE,
         text=True,
@@ -200,11 +205,16 @@ def wait_ready(tunnel: NgrokTunnel, origin: str, timeout: float):
     raise RuntimeError(f"Le tunnel n'est pas prêt : {last_error}")
 
 
-def show_urls(origin: str):
+def show_urls(origin: str, email_login: bool = False):
     print(f"\nRallly       : {origin}/", flush=True)
     print(f"Authentik    : {origin}/authentik/", flush=True)
     print(f"Administration : {origin}/authentik/if/admin/", flush=True)
     print(f"Callback OIDC  : {origin}/api/auth/callback/oidc", flush=True)
+
+    if email_login:
+        print("Mailpit (local) : http://localhost:8025", flush=True)
+        print("Les codes email sont consultables dans Mailpit sur cet ordinateur.", flush=True)
+
     print("\nCtrl+C pour arrêter le tunnel et restaurer l'origine précédente.", flush=True)
 
 
@@ -212,6 +222,7 @@ def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--timeout", type=float, default=90, help="Délai de création du tunnel en secondes (90 par défaut)")
     parser.add_argument("--verbose", action="store_true", help="Afficher les journaux ngrok")
+    parser.add_argument("--email-login", action="store_true", help="Activer la connexion par email avec Mailpit en local")
     args = parser.parse_args(argv)
     executable = shutil.which("ngrok")
     root = Path(__file__).resolve().parents[1]
@@ -244,10 +255,10 @@ def main(argv=None) -> int:
         print(f"Tunnel connecté : {public_origin}\nConfiguration de la stack…", flush=True)
 
         configuration_started = True
-        apply_public_url(root, public_origin)
+        apply_public_url(root, public_origin, email_login=args.email_login)
         print("Vérification de Rallly et d'Authentik via le tunnel…", flush=True)
         wait_ready(tunnel, public_origin, args.timeout)
-        show_urls(public_origin)
+        show_urls(public_origin, email_login=args.email_login)
         exit_code = tunnel.wait()
 
         if exit_code != 0:

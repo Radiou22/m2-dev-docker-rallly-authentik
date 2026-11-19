@@ -1,0 +1,456 @@
+type,vulnerability_id,severity,status,package,package_path,installed_version,fixed_version,title,primary_url
+debian,CVE-2026-109518,HIGH,fixed,apt,,2.6.1,2.6.2,apt: apt: Remote code execution via hard link reuse during package download retries,https://avd.aquasec.com/nvd/cve-2026-109518
+debian,CVE-2011-3374,LOW,affected,apt,,2.6.1,,"It was found that apt-key in apt, all versions, do not correctly valid ...",https://avd.aquasec.com/nvd/cve-2011-3374
+debian,TEMP-0841856-B18BAF,LOW,affected,bash,,5.2.15-2+b13,,[Privilege escalation possible to other user than root],https://security-tracker.debian.org/tracker/TEMP-0841856-B18BAF
+debian,CVE-2026-53613,HIGH,affected,bsdutils,,1:2.38.1-5+deb12u3,,util-linux: TOCTOU in the mount program via ancestor directory swap on target path,https://avd.aquasec.com/nvd/cve-2026-53613
+debian,CVE-2026-53615,HIGH,affected,bsdutils,,1:2.38.1-5+deb12u3,,util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser,https://avd.aquasec.com/nvd/cve-2026-53615
+debian,CVE-2026-78410,HIGH,affected,bsdutils,,1:2.38.1-5+deb12u3,,"util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",https://avd.aquasec.com/nvd/cve-2026-78410
+debian,CVE-2026-13595,MEDIUM,affected,bsdutils,,1:2.38.1-5+deb12u3,,util-linux: util-linux: heap use-after-free in libblkid nested partition probing,https://avd.aquasec.com/nvd/cve-2026-13595
+debian,CVE-2026-27456,MEDIUM,affected,bsdutils,,1:2.38.1-5+deb12u3,,util-linux: TOCTOU in the mount program when setting up loop devices,https://avd.aquasec.com/nvd/cve-2026-27456
+debian,CVE-2026-3184,MEDIUM,will_not_fix,bsdutils,,1:2.38.1-5+deb12u3,,util-linux: util-linux: Access control bypass due to improper hostname canonicalization,https://avd.aquasec.com/nvd/cve-2026-3184
+debian,CVE-2022-0563,LOW,affected,bsdutils,,1:2.38.1-5+deb12u3,,util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,https://avd.aquasec.com/nvd/cve-2022-0563
+debian,CVE-2025-14104,LOW,affected,bsdutils,,1:2.38.1-5+deb12u3,,util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames,https://avd.aquasec.com/nvd/cve-2025-14104
+debian,CVE-2016-2781,LOW,will_not_fix,coreutils,,9.1-1,,coreutils: Non-privileged session can escape to the parent session in chroot,https://avd.aquasec.com/nvd/cve-2016-2781
+debian,CVE-2017-18018,LOW,affected,coreutils,,9.1-1,,coreutils: race condition vulnerability in chown and chgrp,https://avd.aquasec.com/nvd/cve-2017-18018
+debian,CVE-2025-5278,LOW,affected,coreutils,,9.1-1,,coreutils: Heap Buffer Under-Read in GNU Coreutils sort via Key Specification,https://avd.aquasec.com/nvd/cve-2025-5278
+debian,CVE-2026-56391,LOW,affected,coreutils,,9.1-1,,coreutils: GNU coreutils uniq: Denial of Service and information disclosure via out-of-bounds read with multibyte input,https://avd.aquasec.com/nvd/cve-2026-56391
+debian,CVE-2026-56392,LOW,affected,coreutils,,9.1-1,,coreutils: GNU coreutils unexpand: Denial of Service via crafted tab stop values,https://avd.aquasec.com/nvd/cve-2026-56392
+debian,CVE-2026-12064,HIGH,fix_deferred,curl,,7.88.1-10+deb12u15,,curl: curl: SSH host verification bypass when using schemeless URLs with SFTP/SCP,https://avd.aquasec.com/nvd/cve-2026-12064
+debian,CVE-2026-6276,HIGH,affected,curl,,7.88.1-10+deb12u15,,curl: libcurl: Information disclosure due to cookie leak when reusing connections with custom Host headers,https://avd.aquasec.com/nvd/cve-2026-6276
+debian,CVE-2026-8286,HIGH,fix_deferred,curl,,7.88.1-10+deb12u15,,curl: curl: Insecure connection establishment due to TLS configuration mismatch,https://avd.aquasec.com/nvd/cve-2026-8286
+debian,CVE-2026-8458,HIGH,fix_deferred,curl,,7.88.1-10+deb12u15,,curl: libcurl: Unauthorized connection reuse due to a logical error,https://avd.aquasec.com/nvd/cve-2026-8458
+debian,CVE-2026-8927,HIGH,fix_deferred,curl,,7.88.1-10+deb12u15,,curl: Information disclosure due to uncleared proxy authentication state,https://avd.aquasec.com/nvd/cve-2026-8927
+debian,CVE-2026-10536,MEDIUM,fix_deferred,curl,,7.88.1-10+deb12u15,,libcurl: libcurl: Use-after-free vulnerability leading to Denial of Service,https://avd.aquasec.com/nvd/cve-2026-10536
+debian,CVE-2026-11856,MEDIUM,fix_deferred,curl,,7.88.1-10+deb12u15,,curl: curl: Information disclosure via incorrect Digest authentication header reuse,https://avd.aquasec.com/nvd/cve-2026-11856
+debian,CVE-2026-1965,MEDIUM,affected,curl,,7.88.1-10+deb12u15,,curl: curl: Authentication bypass due to incorrect connection reuse with Negotiate authentication,https://avd.aquasec.com/nvd/cve-2026-1965
+debian,CVE-2026-19931,MEDIUM,fix_deferred,curl,,7.88.1-10+deb12u15,,curl: libcurl: Information disclosure via incorrect connection reuse with Negotiate authentication,https://avd.aquasec.com/nvd/cve-2026-19931
+debian,CVE-2026-4873,MEDIUM,affected,curl,,7.88.1-10+deb12u15,,curl: curl: Information disclosure due to incorrect TLS connection reuse,https://avd.aquasec.com/nvd/cve-2026-4873
+debian,CVE-2026-5545,MEDIUM,affected,curl,,7.88.1-10+deb12u15,,curl: libcurl: Authentication bypass due to incorrect HTTP Negotiate connection reuse,https://avd.aquasec.com/nvd/cve-2026-5545
+debian,CVE-2026-6253,MEDIUM,affected,curl,,7.88.1-10+deb12u15,,curl: curl: Proxy credential disclosure via redirects to unauthenticated proxies,https://avd.aquasec.com/nvd/cve-2026-6253
+debian,CVE-2026-6429,MEDIUM,affected,curl,,7.88.1-10+deb12u15,,curl: libcurl: Credential leak via reused proxy connection during HTTP redirects,https://avd.aquasec.com/nvd/cve-2026-6429
+debian,CVE-2026-8924,MEDIUM,fix_deferred,curl,,7.88.1-10+deb12u15,,curl: curl: Cookie injection via malicious HTTP server using super cookies,https://avd.aquasec.com/nvd/cve-2026-8924
+debian,CVE-2026-8932,MEDIUM,fix_deferred,curl,,7.88.1-10+deb12u15,,libcurl: libcurl: Security feature bypass due to improper mTLS connection reuse,https://avd.aquasec.com/nvd/cve-2026-8932
+debian,CVE-2026-92388,MEDIUM,fix_deferred,curl,,7.88.1-10+deb12u15,,curl: curl: FTP wildcard write callback mixup,https://avd.aquasec.com/nvd/cve-2026-92388
+debian,CVE-2024-2379,LOW,affected,curl,,7.88.1-10+deb12u15,,curl: QUIC certificate check bypass with wolfSSL,https://avd.aquasec.com/nvd/cve-2024-2379
+debian,CVE-2025-0725,LOW,affected,curl,,7.88.1-10+deb12u15,,libcurl: Buffer Overflow in libcurl via zlib Integer Overflow,https://avd.aquasec.com/nvd/cve-2025-0725
+debian,CVE-2025-10966,LOW,affected,curl,,7.88.1-10+deb12u15,,curl: Curl missing SFTP host verification with wolfSSH backend,https://avd.aquasec.com/nvd/cve-2025-10966
+debian,CVE-2025-14017,LOW,affected,curl,,7.88.1-10+deb12u15,,curl: curl: Security bypass due to global TLS option changes in multi-threaded LDAPS transfers,https://avd.aquasec.com/nvd/cve-2025-14017
+debian,CVE-2025-15079,LOW,affected,curl,,7.88.1-10+deb12u15,,curl: Host verification bypass during SSH transfers,https://avd.aquasec.com/nvd/cve-2025-15079
+debian,CVE-2025-15224,LOW,affected,curl,,7.88.1-10+deb12u15,,curl: libssh key passphrase bypass without agent set,https://avd.aquasec.com/nvd/cve-2025-15224
+debian,CVE-2026-107928,LOW,affected,curl,,7.88.1-10+deb12u15,,curl: curl: info leak uploading over WebSockets with GnuTLS,https://avd.aquasec.com/nvd/cve-2026-107928
+debian,CVE-2026-13608,LOW,fix_deferred,curl,,7.88.1-10+deb12u15,,curl: curl: Authentication bypass in OpenLDAP SASL negotiation via Man-in-the-Middle (MITM) attack,https://avd.aquasec.com/nvd/cve-2026-13608
+debian,CVE-2026-18924,LOW,fix_deferred,curl,,7.88.1-10+deb12u15,,curl: libcurl: Use-after-free in HTTP/2 Server Push with shared connections,https://avd.aquasec.com/nvd/cve-2026-18924
+debian,CVE-2026-80230,LOW,fix_deferred,curl,,7.88.1-10+deb12u15,,curl: curl: Public key pinning bypass allows unauthenticated connections,https://avd.aquasec.com/nvd/cve-2026-80230
+debian,CVE-2026-82209,LOW,fix_deferred,curl,,7.88.1-10+deb12u15,,curl: libcurl: Information disclosure via improper Public Suffix List boundary check,https://avd.aquasec.com/nvd/cve-2026-82209
+debian,CVE-2026-86409,LOW,affected,curl,,7.88.1-10+deb12u15,,curl: curl: stale SigV4 headers sent unintended,https://avd.aquasec.com/nvd/cve-2026-86409
+debian,CVE-2026-86410,LOW,affected,curl,,7.88.1-10+deb12u15,,curl: curl: redirect to SFTP or SCP bypasses host verification,https://avd.aquasec.com/nvd/cve-2026-86410
+debian,CVE-2026-86414,LOW,affected,curl,,7.88.1-10+deb12u15,,curl: curl: leaking host credentials to HTTP proxy,https://avd.aquasec.com/nvd/cve-2026-86414
+debian,CVE-2026-87864,LOW,fix_deferred,curl,,7.88.1-10+deb12u15,,curl: IMAP APPEND plus CRLF conversion command injection,https://avd.aquasec.com/nvd/cve-2026-87864
+debian,CVE-2026-87865,LOW,fix_deferred,curl,,7.88.1-10+deb12u15,,curl: curl: knownhost callback mismatches key as missing,https://avd.aquasec.com/nvd/cve-2026-87865
+debian,CVE-2026-87866,LOW,affected,curl,,7.88.1-10+deb12u15,,curl: curl: wolfSSL public-key pinning bypass,https://avd.aquasec.com/nvd/cve-2026-87866
+debian,CVE-2026-92389,LOW,fix_deferred,curl,,7.88.1-10+deb12u15,,curl: curl: TFTP direction confusion,https://avd.aquasec.com/nvd/cve-2026-92389
+debian,CVE-2026-92390,LOW,fix_deferred,curl,,7.88.1-10+deb12u15,,curl: curl: -J no-clobber guarantee bypassed with 103 early hints,https://avd.aquasec.com/nvd/cve-2026-92390
+debian,CVE-2026-92391,LOW,affected,curl,,7.88.1-10+deb12u15,,curl: curl: curl_mime_free stack overflow by recursion,https://avd.aquasec.com/nvd/cve-2026-92391
+debian,CVE-2026-94266,LOW,affected,curl,,7.88.1-10+deb12u15,,curl: curl: password leak in CURLINFO_EFFECTIVE_URL,https://avd.aquasec.com/nvd/cve-2026-94266
+debian,CVE-2026-9547,LOW,affected,curl,,7.88.1-10+deb12u15,,curl: curl: Man-in-the-middle attack via SSH host key bypass,https://avd.aquasec.com/nvd/cve-2026-9547
+debian,CVE-2026-102473,LOW,affected,dash,,0.5.12-2,,dash: dash: Super-polynomial backtracking in pmatch when libc fnmatch is disabled,https://avd.aquasec.com/nvd/cve-2026-102473
+debian,CVE-2026-102474,LOW,affected,dash,,0.5.12-2,,dash: dash: Heap out-of-bounds write in conv_escape via undersized Unicode escape reservation,https://avd.aquasec.com/nvd/cve-2026-102474
+debian,CVE-2026-53910,LOW,affected,diffutils,,1:3.8-4,,diffutils: heap‑based buffer overflow due to multiple signed integer overflows in line‑mapping calculations,https://avd.aquasec.com/nvd/cve-2026-53910
+debian,CVE-2026-91094,UNKNOWN,affected,dpkg,,1.21.23,,A directory traversal bug was discovered when unpacking 3.0 (quilt) so ...,https://avd.aquasec.com/nvd/cve-2026-91094
+debian,CVE-2026-102010,MEDIUM,will_not_fix,gcc-12-base,,12.2.0-14+deb12u1,,gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: Denial of Service via use-after-free in binary heap erase_if,https://avd.aquasec.com/nvd/cve-2026-102010
+debian,CVE-2026-114690,MEDIUM,affected,gcc-12-base,,12.2.0-14+deb12u1,,gcc: Confirmed out-of-bounds read/write in libstdc++ parallel `std,https://avd.aquasec.com/nvd/cve-2026-114690
+debian,CVE-2026-114691,MEDIUM,affected,gcc-12-base,,12.2.0-14+deb12u1,,gcc: Integer wrap in `std,https://avd.aquasec.com/nvd/cve-2026-114691
+debian,CVE-2026-125709,MEDIUM,affected,gcc-12-base,,12.2.0-14+deb12u1,,libstdc++: overflow leaves streambuf in inconsistent state on I/O error.,https://avd.aquasec.com/nvd/cve-2026-125709
+debian,CVE-2026-95619,MEDIUM,fix_deferred,gcc-12-base,,12.2.0-14+deb12u1,,gcc: libstdc++ integer overflow in `new` operator,https://avd.aquasec.com/nvd/cve-2026-95619
+debian,CVE-2022-27943,LOW,affected,gcc-12-base,,12.2.0-14+deb12u1,,binutils: libiberty/rust-demangle.c in GNU GCC 11.2 allows stack exhaustion in demangle_const,https://avd.aquasec.com/nvd/cve-2022-27943
+debian,CVE-2026-115456,LOW,affected,gcc-12-base,,12.2.0-14+deb12u1,,gcc: Out-of-bounds read in std::from_chars,https://avd.aquasec.com/nvd/cve-2026-115456
+debian,CVE-2025-30258,MEDIUM,affected,gpgv,,2.2.40-1.1+deb12u2,,gnupg: verification DoS due to a malicious subkey in the keyring,https://avd.aquasec.com/nvd/cve-2025-30258
+debian,CVE-2025-68972,MEDIUM,affected,gpgv,,2.2.40-1.1+deb12u2,,gnupg: GnuPG: Signature bypass via form feed character in signed messages,https://avd.aquasec.com/nvd/cve-2025-68972
+debian,CVE-2022-3219,LOW,affected,gpgv,,2.2.40-1.1+deb12u2,,gnupg: denial of service issue (resource consumption) using compressed packets,https://avd.aquasec.com/nvd/cve-2022-3219
+debian,CVE-2026-105712,LOW,fix_deferred,gpgv,,2.2.40-1.1+deb12u2,,gnupg2: gnupg: Arbitrary file overwrite via symlink traversal in gpgtar,https://avd.aquasec.com/nvd/cve-2026-105712
+debian,CVE-2026-57062,LOW,fix_deferred,gpgv,,2.2.40-1.1+deb12u2,,GnuPG: Incorrect cryptographic message parsing,https://avd.aquasec.com/nvd/cve-2026-57062
+debian,CVE-2026-41992,HIGH,fix_deferred,gzip,,1.12-1,,gzip: gzip: Information disclosure via global buffer overflow in LZH decompression,https://avd.aquasec.com/nvd/cve-2026-41992
+debian,CVE-2026-41991,MEDIUM,fix_deferred,gzip,,1.12-1,,gzip: gzip: Arbitrary file overwrite via insecure temporary file handling in gzexe utility,https://avd.aquasec.com/nvd/cve-2026-41991
+debian,CVE-2026-54369,HIGH,fix_deferred,libacl1,,2.3.1-3,,acl: Symlink traversal privilege escalation via libacl functions,https://avd.aquasec.com/nvd/cve-2026-54369
+debian,CVE-2026-54370,MEDIUM,fix_deferred,libacl1,,2.3.1-3,,acl: TOCTOU Symlink Traversal via getfacl/setfacl,https://avd.aquasec.com/nvd/cve-2026-54370
+debian,CVE-2026-109518,HIGH,fixed,libapt-pkg6.0,,2.6.1,2.6.2,apt: apt: Remote code execution via hard link reuse during package download retries,https://avd.aquasec.com/nvd/cve-2026-109518
+debian,CVE-2011-3374,LOW,affected,libapt-pkg6.0,,2.6.1,,"It was found that apt-key in apt, all versions, do not correctly valid ...",https://avd.aquasec.com/nvd/cve-2011-3374
+debian,CVE-2026-54371,MEDIUM,fix_deferred,libattr1,,1:2.5.1-4,,attr: attr: Symlink Traversal Privilege Escalation via getfattr and setfattr,https://avd.aquasec.com/nvd/cve-2026-54371
+debian,CVE-2026-53613,HIGH,affected,libblkid1,,2.38.1-5+deb12u3,,util-linux: TOCTOU in the mount program via ancestor directory swap on target path,https://avd.aquasec.com/nvd/cve-2026-53613
+debian,CVE-2026-53615,HIGH,affected,libblkid1,,2.38.1-5+deb12u3,,util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser,https://avd.aquasec.com/nvd/cve-2026-53615
+debian,CVE-2026-78410,HIGH,affected,libblkid1,,2.38.1-5+deb12u3,,"util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",https://avd.aquasec.com/nvd/cve-2026-78410
+debian,CVE-2026-13595,MEDIUM,affected,libblkid1,,2.38.1-5+deb12u3,,util-linux: util-linux: heap use-after-free in libblkid nested partition probing,https://avd.aquasec.com/nvd/cve-2026-13595
+debian,CVE-2026-27456,MEDIUM,affected,libblkid1,,2.38.1-5+deb12u3,,util-linux: TOCTOU in the mount program when setting up loop devices,https://avd.aquasec.com/nvd/cve-2026-27456
+debian,CVE-2026-3184,MEDIUM,will_not_fix,libblkid1,,2.38.1-5+deb12u3,,util-linux: util-linux: Access control bypass due to improper hostname canonicalization,https://avd.aquasec.com/nvd/cve-2026-3184
+debian,CVE-2022-0563,LOW,affected,libblkid1,,2.38.1-5+deb12u3,,util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,https://avd.aquasec.com/nvd/cve-2022-0563
+debian,CVE-2025-14104,LOW,affected,libblkid1,,2.38.1-5+deb12u3,,util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames,https://avd.aquasec.com/nvd/cve-2025-14104
+debian,CVE-2026-42250,MEDIUM,affected,libbz2-1.0,,1.0.8-5+b1,,bzip2: bzip2: Denial of Service in bzip2recover via a specially crafted file,https://avd.aquasec.com/nvd/cve-2026-42250
+debian,CVE-2026-115819,MEDIUM,affected,libc-bin,,2.36-9+deb12u14,,glibc: glibc: Memory corruption via out-of-bounds write in wide scanf functions,https://avd.aquasec.com/nvd/cve-2026-115819
+debian,CVE-2026-18374,MEDIUM,fix_deferred,libc-bin,,2.36-9+deb12u14,,glibc: glibc: Heap buffer overflow via attacker-controlled fopen mode string,https://avd.aquasec.com/nvd/cve-2026-18374
+debian,CVE-2026-19499,MEDIUM,fix_deferred,libc-bin,,2.36-9+deb12u14,,glibc: Buffer Overflow in strfmon right-justification padding,https://avd.aquasec.com/nvd/cve-2026-19499
+debian,CVE-2026-19542,MEDIUM,fix_deferred,libc-bin,,2.36-9+deb12u14,,glibc: Fix out-of-bounds array write in tdelete,https://avd.aquasec.com/nvd/cve-2026-19542
+debian,CVE-2026-5435,MEDIUM,affected,libc-bin,,2.36-9+deb12u14,,glibc: glibc: Out-of-bounds write via TSIG record processing,https://avd.aquasec.com/nvd/cve-2026-5435
+debian,CVE-2026-5450,MEDIUM,affected,libc-bin,,2.36-9+deb12u14,,glibc: glibc: Heap Buffer Overflow in `scanf` with `%mc` format specifier and large width,https://avd.aquasec.com/nvd/cve-2026-5450
+debian,CVE-2026-5928,MEDIUM,affected,libc-bin,,2.36-9+deb12u14,,glibc: glibc: Information disclosure or denial of service via ungetwc function with specific wide character encodings,https://avd.aquasec.com/nvd/cve-2026-5928
+debian,CVE-2026-6238,MEDIUM,affected,libc-bin,,2.36-9+deb12u14,,glibc: glibc: Application crash or uninitialized memory read via crafted DNS response,https://avd.aquasec.com/nvd/cve-2026-6238
+debian,CVE-2026-6368,MEDIUM,fix_deferred,libc-bin,,2.36-9+deb12u14,,glibc: glibc: Process abort due to invalid memory in wordexp,https://avd.aquasec.com/nvd/cve-2026-6368
+debian,CVE-2026-6791,MEDIUM,fix_deferred,libc-bin,,2.36-9+deb12u14,,glibc: Glibc: Denial of Service via stack exhaustion during tilde expansion,https://avd.aquasec.com/nvd/cve-2026-6791
+debian,CVE-2026-77117,MEDIUM,fix_deferred,libc-bin,,2.36-9+deb12u14,,glibc: Non-progress DoS in SHIFT_JISX0213 -&gt,https://avd.aquasec.com/nvd/cve-2026-77117
+debian,CVE-2026-80489,MEDIUM,fix_deferred,libc-bin,,2.36-9+deb12u14,,glibc: Non-progress DoS in EUC_JISX0213 -> UCS-4 conversion state,https://avd.aquasec.com/nvd/cve-2026-80489
+debian,CVE-2026-84243,MEDIUM,affected,libc-bin,,2.36-9+deb12u14,,glibc: glibc: Arbitrary code execution via directory traversal in LANGUAGE environment variable,https://avd.aquasec.com/nvd/cve-2026-84243
+debian,CVE-2026-8674,MEDIUM,fix_deferred,libc-bin,,2.36-9+deb12u14,,glibc: glibc DNS stub resolver: Denial of Service via long search domain in configuration,https://avd.aquasec.com/nvd/cve-2026-8674
+debian,CVE-2026-86805,MEDIUM,affected,libc-bin,,2.36-9+deb12u14,,glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader,https://avd.aquasec.com/nvd/cve-2026-86805
+debian,CVE-2026-89092,MEDIUM,fix_deferred,libc-bin,,2.36-9+deb12u14,,glibc: nscd stack overflow leads to degraded DNS resolution,https://avd.aquasec.com/nvd/cve-2026-89092
+debian,CVE-2026-95818,MEDIUM,affected,libc-bin,,2.36-9+deb12u14,,glibc: glibc: Local attacker can cause denial of service and information disclosure via stack-based buffer overflow.,https://avd.aquasec.com/nvd/cve-2026-95818
+debian,CVE-2010-4756,LOW,affected,libc-bin,,2.36-9+deb12u14,,glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions,https://avd.aquasec.com/nvd/cve-2010-4756
+debian,CVE-2018-20796,LOW,affected,libc-bin,,2.36-9+deb12u14,,glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c,https://avd.aquasec.com/nvd/cve-2018-20796
+debian,CVE-2019-1010022,LOW,affected,libc-bin,,2.36-9+deb12u14,,glibc: stack guard protection bypass,https://avd.aquasec.com/nvd/cve-2019-1010022
+debian,CVE-2019-1010023,LOW,affected,libc-bin,,2.36-9+deb12u14,,glibc: running ldd on malicious ELF leads to code execution because of wrong size computation,https://avd.aquasec.com/nvd/cve-2019-1010023
+debian,CVE-2019-1010024,LOW,affected,libc-bin,,2.36-9+deb12u14,,glibc: ASLR bypass using cache of thread stack and heap,https://avd.aquasec.com/nvd/cve-2019-1010024
+debian,CVE-2019-1010025,LOW,affected,libc-bin,,2.36-9+deb12u14,,glibc: information disclosure of heap addresses of pthread_created thread,https://avd.aquasec.com/nvd/cve-2019-1010025
+debian,CVE-2019-9192,LOW,affected,libc-bin,,2.36-9+deb12u14,,glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c,https://avd.aquasec.com/nvd/cve-2019-9192
+debian,CVE-2026-100290,LOW,affected,libc-bin,,2.36-9+deb12u14,,glibc: glibc: Denial of Service via memory allocation failure during regular expression processing,https://avd.aquasec.com/nvd/cve-2026-100290
+debian,CVE-2026-97399,LOW,affected,libc-bin,,2.36-9+deb12u14,,glibc: glibc: Denial of Service via out-of-bounds read in strncasecmp,https://avd.aquasec.com/nvd/cve-2026-97399
+debian,CVE-2026-121757,UNKNOWN,affected,libc-bin,,2.36-9+deb12u14,,Converting crafted CP949 input to UTF-8 character encoding and ignorin ...,https://avd.aquasec.com/nvd/cve-2026-121757
+debian,CVE-2026-121758,UNKNOWN,affected,libc-bin,,2.36-9+deb12u14,,"Converting crafted ISO-2022-CN-EXT input to UTF-8 character encoding,  ...",https://avd.aquasec.com/nvd/cve-2026-121758
+debian,CVE-2026-124024,UNKNOWN,affected,libc-bin,,2.36-9+deb12u14,,Converting crafted input from UCS-4 to IBM1390 or IBM1399 character en ...,https://avd.aquasec.com/nvd/cve-2026-124024
+debian,CVE-2026-115819,MEDIUM,affected,libc6,,2.36-9+deb12u14,,glibc: glibc: Memory corruption via out-of-bounds write in wide scanf functions,https://avd.aquasec.com/nvd/cve-2026-115819
+debian,CVE-2026-18374,MEDIUM,fix_deferred,libc6,,2.36-9+deb12u14,,glibc: glibc: Heap buffer overflow via attacker-controlled fopen mode string,https://avd.aquasec.com/nvd/cve-2026-18374
+debian,CVE-2026-19499,MEDIUM,fix_deferred,libc6,,2.36-9+deb12u14,,glibc: Buffer Overflow in strfmon right-justification padding,https://avd.aquasec.com/nvd/cve-2026-19499
+debian,CVE-2026-19542,MEDIUM,fix_deferred,libc6,,2.36-9+deb12u14,,glibc: Fix out-of-bounds array write in tdelete,https://avd.aquasec.com/nvd/cve-2026-19542
+debian,CVE-2026-5435,MEDIUM,affected,libc6,,2.36-9+deb12u14,,glibc: glibc: Out-of-bounds write via TSIG record processing,https://avd.aquasec.com/nvd/cve-2026-5435
+debian,CVE-2026-5450,MEDIUM,affected,libc6,,2.36-9+deb12u14,,glibc: glibc: Heap Buffer Overflow in `scanf` with `%mc` format specifier and large width,https://avd.aquasec.com/nvd/cve-2026-5450
+debian,CVE-2026-5928,MEDIUM,affected,libc6,,2.36-9+deb12u14,,glibc: glibc: Information disclosure or denial of service via ungetwc function with specific wide character encodings,https://avd.aquasec.com/nvd/cve-2026-5928
+debian,CVE-2026-6238,MEDIUM,affected,libc6,,2.36-9+deb12u14,,glibc: glibc: Application crash or uninitialized memory read via crafted DNS response,https://avd.aquasec.com/nvd/cve-2026-6238
+debian,CVE-2026-6368,MEDIUM,fix_deferred,libc6,,2.36-9+deb12u14,,glibc: glibc: Process abort due to invalid memory in wordexp,https://avd.aquasec.com/nvd/cve-2026-6368
+debian,CVE-2026-6791,MEDIUM,fix_deferred,libc6,,2.36-9+deb12u14,,glibc: Glibc: Denial of Service via stack exhaustion during tilde expansion,https://avd.aquasec.com/nvd/cve-2026-6791
+debian,CVE-2026-77117,MEDIUM,fix_deferred,libc6,,2.36-9+deb12u14,,glibc: Non-progress DoS in SHIFT_JISX0213 -&gt,https://avd.aquasec.com/nvd/cve-2026-77117
+debian,CVE-2026-80489,MEDIUM,fix_deferred,libc6,,2.36-9+deb12u14,,glibc: Non-progress DoS in EUC_JISX0213 -> UCS-4 conversion state,https://avd.aquasec.com/nvd/cve-2026-80489
+debian,CVE-2026-84243,MEDIUM,affected,libc6,,2.36-9+deb12u14,,glibc: glibc: Arbitrary code execution via directory traversal in LANGUAGE environment variable,https://avd.aquasec.com/nvd/cve-2026-84243
+debian,CVE-2026-8674,MEDIUM,fix_deferred,libc6,,2.36-9+deb12u14,,glibc: glibc DNS stub resolver: Denial of Service via long search domain in configuration,https://avd.aquasec.com/nvd/cve-2026-8674
+debian,CVE-2026-86805,MEDIUM,affected,libc6,,2.36-9+deb12u14,,glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader,https://avd.aquasec.com/nvd/cve-2026-86805
+debian,CVE-2026-89092,MEDIUM,fix_deferred,libc6,,2.36-9+deb12u14,,glibc: nscd stack overflow leads to degraded DNS resolution,https://avd.aquasec.com/nvd/cve-2026-89092
+debian,CVE-2026-95818,MEDIUM,affected,libc6,,2.36-9+deb12u14,,glibc: glibc: Local attacker can cause denial of service and information disclosure via stack-based buffer overflow.,https://avd.aquasec.com/nvd/cve-2026-95818
+debian,CVE-2010-4756,LOW,affected,libc6,,2.36-9+deb12u14,,glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions,https://avd.aquasec.com/nvd/cve-2010-4756
+debian,CVE-2018-20796,LOW,affected,libc6,,2.36-9+deb12u14,,glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c,https://avd.aquasec.com/nvd/cve-2018-20796
+debian,CVE-2019-1010022,LOW,affected,libc6,,2.36-9+deb12u14,,glibc: stack guard protection bypass,https://avd.aquasec.com/nvd/cve-2019-1010022
+debian,CVE-2019-1010023,LOW,affected,libc6,,2.36-9+deb12u14,,glibc: running ldd on malicious ELF leads to code execution because of wrong size computation,https://avd.aquasec.com/nvd/cve-2019-1010023
+debian,CVE-2019-1010024,LOW,affected,libc6,,2.36-9+deb12u14,,glibc: ASLR bypass using cache of thread stack and heap,https://avd.aquasec.com/nvd/cve-2019-1010024
+debian,CVE-2019-1010025,LOW,affected,libc6,,2.36-9+deb12u14,,glibc: information disclosure of heap addresses of pthread_created thread,https://avd.aquasec.com/nvd/cve-2019-1010025
+debian,CVE-2019-9192,LOW,affected,libc6,,2.36-9+deb12u14,,glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c,https://avd.aquasec.com/nvd/cve-2019-9192
+debian,CVE-2026-100290,LOW,affected,libc6,,2.36-9+deb12u14,,glibc: glibc: Denial of Service via memory allocation failure during regular expression processing,https://avd.aquasec.com/nvd/cve-2026-100290
+debian,CVE-2026-97399,LOW,affected,libc6,,2.36-9+deb12u14,,glibc: glibc: Denial of Service via out-of-bounds read in strncasecmp,https://avd.aquasec.com/nvd/cve-2026-97399
+debian,CVE-2026-121757,UNKNOWN,affected,libc6,,2.36-9+deb12u14,,Converting crafted CP949 input to UTF-8 character encoding and ignorin ...,https://avd.aquasec.com/nvd/cve-2026-121757
+debian,CVE-2026-121758,UNKNOWN,affected,libc6,,2.36-9+deb12u14,,"Converting crafted ISO-2022-CN-EXT input to UTF-8 character encoding,  ...",https://avd.aquasec.com/nvd/cve-2026-121758
+debian,CVE-2026-124024,UNKNOWN,affected,libc6,,2.36-9+deb12u14,,Converting crafted input from UCS-4 to IBM1390 or IBM1399 character en ...,https://avd.aquasec.com/nvd/cve-2026-124024
+debian,CVE-2026-12064,HIGH,fix_deferred,libcurl4,,7.88.1-10+deb12u15,,curl: curl: SSH host verification bypass when using schemeless URLs with SFTP/SCP,https://avd.aquasec.com/nvd/cve-2026-12064
+debian,CVE-2026-6276,HIGH,affected,libcurl4,,7.88.1-10+deb12u15,,curl: libcurl: Information disclosure due to cookie leak when reusing connections with custom Host headers,https://avd.aquasec.com/nvd/cve-2026-6276
+debian,CVE-2026-8286,HIGH,fix_deferred,libcurl4,,7.88.1-10+deb12u15,,curl: curl: Insecure connection establishment due to TLS configuration mismatch,https://avd.aquasec.com/nvd/cve-2026-8286
+debian,CVE-2026-8458,HIGH,fix_deferred,libcurl4,,7.88.1-10+deb12u15,,curl: libcurl: Unauthorized connection reuse due to a logical error,https://avd.aquasec.com/nvd/cve-2026-8458
+debian,CVE-2026-8927,HIGH,fix_deferred,libcurl4,,7.88.1-10+deb12u15,,curl: Information disclosure due to uncleared proxy authentication state,https://avd.aquasec.com/nvd/cve-2026-8927
+debian,CVE-2026-10536,MEDIUM,fix_deferred,libcurl4,,7.88.1-10+deb12u15,,libcurl: libcurl: Use-after-free vulnerability leading to Denial of Service,https://avd.aquasec.com/nvd/cve-2026-10536
+debian,CVE-2026-11856,MEDIUM,fix_deferred,libcurl4,,7.88.1-10+deb12u15,,curl: curl: Information disclosure via incorrect Digest authentication header reuse,https://avd.aquasec.com/nvd/cve-2026-11856
+debian,CVE-2026-1965,MEDIUM,affected,libcurl4,,7.88.1-10+deb12u15,,curl: curl: Authentication bypass due to incorrect connection reuse with Negotiate authentication,https://avd.aquasec.com/nvd/cve-2026-1965
+debian,CVE-2026-19931,MEDIUM,fix_deferred,libcurl4,,7.88.1-10+deb12u15,,curl: libcurl: Information disclosure via incorrect connection reuse with Negotiate authentication,https://avd.aquasec.com/nvd/cve-2026-19931
+debian,CVE-2026-4873,MEDIUM,affected,libcurl4,,7.88.1-10+deb12u15,,curl: curl: Information disclosure due to incorrect TLS connection reuse,https://avd.aquasec.com/nvd/cve-2026-4873
+debian,CVE-2026-5545,MEDIUM,affected,libcurl4,,7.88.1-10+deb12u15,,curl: libcurl: Authentication bypass due to incorrect HTTP Negotiate connection reuse,https://avd.aquasec.com/nvd/cve-2026-5545
+debian,CVE-2026-6253,MEDIUM,affected,libcurl4,,7.88.1-10+deb12u15,,curl: curl: Proxy credential disclosure via redirects to unauthenticated proxies,https://avd.aquasec.com/nvd/cve-2026-6253
+debian,CVE-2026-6429,MEDIUM,affected,libcurl4,,7.88.1-10+deb12u15,,curl: libcurl: Credential leak via reused proxy connection during HTTP redirects,https://avd.aquasec.com/nvd/cve-2026-6429
+debian,CVE-2026-8924,MEDIUM,fix_deferred,libcurl4,,7.88.1-10+deb12u15,,curl: curl: Cookie injection via malicious HTTP server using super cookies,https://avd.aquasec.com/nvd/cve-2026-8924
+debian,CVE-2026-8932,MEDIUM,fix_deferred,libcurl4,,7.88.1-10+deb12u15,,libcurl: libcurl: Security feature bypass due to improper mTLS connection reuse,https://avd.aquasec.com/nvd/cve-2026-8932
+debian,CVE-2026-92388,MEDIUM,fix_deferred,libcurl4,,7.88.1-10+deb12u15,,curl: curl: FTP wildcard write callback mixup,https://avd.aquasec.com/nvd/cve-2026-92388
+debian,CVE-2024-2379,LOW,affected,libcurl4,,7.88.1-10+deb12u15,,curl: QUIC certificate check bypass with wolfSSL,https://avd.aquasec.com/nvd/cve-2024-2379
+debian,CVE-2025-0725,LOW,affected,libcurl4,,7.88.1-10+deb12u15,,libcurl: Buffer Overflow in libcurl via zlib Integer Overflow,https://avd.aquasec.com/nvd/cve-2025-0725
+debian,CVE-2025-10966,LOW,affected,libcurl4,,7.88.1-10+deb12u15,,curl: Curl missing SFTP host verification with wolfSSH backend,https://avd.aquasec.com/nvd/cve-2025-10966
+debian,CVE-2025-14017,LOW,affected,libcurl4,,7.88.1-10+deb12u15,,curl: curl: Security bypass due to global TLS option changes in multi-threaded LDAPS transfers,https://avd.aquasec.com/nvd/cve-2025-14017
+debian,CVE-2025-15079,LOW,affected,libcurl4,,7.88.1-10+deb12u15,,curl: Host verification bypass during SSH transfers,https://avd.aquasec.com/nvd/cve-2025-15079
+debian,CVE-2025-15224,LOW,affected,libcurl4,,7.88.1-10+deb12u15,,curl: libssh key passphrase bypass without agent set,https://avd.aquasec.com/nvd/cve-2025-15224
+debian,CVE-2026-107928,LOW,affected,libcurl4,,7.88.1-10+deb12u15,,curl: curl: info leak uploading over WebSockets with GnuTLS,https://avd.aquasec.com/nvd/cve-2026-107928
+debian,CVE-2026-13608,LOW,fix_deferred,libcurl4,,7.88.1-10+deb12u15,,curl: curl: Authentication bypass in OpenLDAP SASL negotiation via Man-in-the-Middle (MITM) attack,https://avd.aquasec.com/nvd/cve-2026-13608
+debian,CVE-2026-18924,LOW,fix_deferred,libcurl4,,7.88.1-10+deb12u15,,curl: libcurl: Use-after-free in HTTP/2 Server Push with shared connections,https://avd.aquasec.com/nvd/cve-2026-18924
+debian,CVE-2026-80230,LOW,fix_deferred,libcurl4,,7.88.1-10+deb12u15,,curl: curl: Public key pinning bypass allows unauthenticated connections,https://avd.aquasec.com/nvd/cve-2026-80230
+debian,CVE-2026-82209,LOW,fix_deferred,libcurl4,,7.88.1-10+deb12u15,,curl: libcurl: Information disclosure via improper Public Suffix List boundary check,https://avd.aquasec.com/nvd/cve-2026-82209
+debian,CVE-2026-86409,LOW,affected,libcurl4,,7.88.1-10+deb12u15,,curl: curl: stale SigV4 headers sent unintended,https://avd.aquasec.com/nvd/cve-2026-86409
+debian,CVE-2026-86410,LOW,affected,libcurl4,,7.88.1-10+deb12u15,,curl: curl: redirect to SFTP or SCP bypasses host verification,https://avd.aquasec.com/nvd/cve-2026-86410
+debian,CVE-2026-86414,LOW,affected,libcurl4,,7.88.1-10+deb12u15,,curl: curl: leaking host credentials to HTTP proxy,https://avd.aquasec.com/nvd/cve-2026-86414
+debian,CVE-2026-87864,LOW,fix_deferred,libcurl4,,7.88.1-10+deb12u15,,curl: IMAP APPEND plus CRLF conversion command injection,https://avd.aquasec.com/nvd/cve-2026-87864
+debian,CVE-2026-87865,LOW,fix_deferred,libcurl4,,7.88.1-10+deb12u15,,curl: curl: knownhost callback mismatches key as missing,https://avd.aquasec.com/nvd/cve-2026-87865
+debian,CVE-2026-87866,LOW,affected,libcurl4,,7.88.1-10+deb12u15,,curl: curl: wolfSSL public-key pinning bypass,https://avd.aquasec.com/nvd/cve-2026-87866
+debian,CVE-2026-92389,LOW,fix_deferred,libcurl4,,7.88.1-10+deb12u15,,curl: curl: TFTP direction confusion,https://avd.aquasec.com/nvd/cve-2026-92389
+debian,CVE-2026-92390,LOW,fix_deferred,libcurl4,,7.88.1-10+deb12u15,,curl: curl: -J no-clobber guarantee bypassed with 103 early hints,https://avd.aquasec.com/nvd/cve-2026-92390
+debian,CVE-2026-92391,LOW,affected,libcurl4,,7.88.1-10+deb12u15,,curl: curl: curl_mime_free stack overflow by recursion,https://avd.aquasec.com/nvd/cve-2026-92391
+debian,CVE-2026-94266,LOW,affected,libcurl4,,7.88.1-10+deb12u15,,curl: curl: password leak in CURLINFO_EFFECTIVE_URL,https://avd.aquasec.com/nvd/cve-2026-94266
+debian,CVE-2026-9547,LOW,affected,libcurl4,,7.88.1-10+deb12u15,,curl: curl: Man-in-the-middle attack via SSH host key bypass,https://avd.aquasec.com/nvd/cve-2026-9547
+debian,CVE-2026-102010,MEDIUM,will_not_fix,libgcc-s1,,12.2.0-14+deb12u1,,gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: Denial of Service via use-after-free in binary heap erase_if,https://avd.aquasec.com/nvd/cve-2026-102010
+debian,CVE-2026-114690,MEDIUM,affected,libgcc-s1,,12.2.0-14+deb12u1,,gcc: Confirmed out-of-bounds read/write in libstdc++ parallel `std,https://avd.aquasec.com/nvd/cve-2026-114690
+debian,CVE-2026-114691,MEDIUM,affected,libgcc-s1,,12.2.0-14+deb12u1,,gcc: Integer wrap in `std,https://avd.aquasec.com/nvd/cve-2026-114691
+debian,CVE-2026-125709,MEDIUM,affected,libgcc-s1,,12.2.0-14+deb12u1,,libstdc++: overflow leaves streambuf in inconsistent state on I/O error.,https://avd.aquasec.com/nvd/cve-2026-125709
+debian,CVE-2026-95619,MEDIUM,fix_deferred,libgcc-s1,,12.2.0-14+deb12u1,,gcc: libstdc++ integer overflow in `new` operator,https://avd.aquasec.com/nvd/cve-2026-95619
+debian,CVE-2022-27943,LOW,affected,libgcc-s1,,12.2.0-14+deb12u1,,binutils: libiberty/rust-demangle.c in GNU GCC 11.2 allows stack exhaustion in demangle_const,https://avd.aquasec.com/nvd/cve-2022-27943
+debian,CVE-2026-115456,LOW,affected,libgcc-s1,,12.2.0-14+deb12u1,,gcc: Out-of-bounds read in std::from_chars,https://avd.aquasec.com/nvd/cve-2026-115456
+debian,CVE-2018-6829,LOW,affected,libgcrypt20,,1.10.1-3+deb12u1,,libgcrypt: ElGamal implementation doesn't have semantic security due to incorrectly encoded plaintexts possibly allowing to obtain sensitive information,https://avd.aquasec.com/nvd/cve-2018-6829
+debian,CVE-2024-2236,LOW,affected,libgcrypt20,,1.10.1-3+deb12u1,,libgcrypt: vulnerable to Marvin Attack,https://avd.aquasec.com/nvd/cve-2024-2236
+debian,CVE-2011-3389,LOW,affected,libgnutls30,,3.7.9-2+deb12u7,,HTTPS: block-wise chosen-plaintext attack against SSL/TLS (BEAST),https://avd.aquasec.com/nvd/cve-2011-3389
+debian,CVE-2026-67693,LOW,affected,libgnutls30,,3.7.9-2+deb12u7,,gnutls: gnutls: Information disclosure via contradictory Key Usage and Extended Key Usage extensions,https://avd.aquasec.com/nvd/cve-2026-67693
+debian,CVE-2026-88647,LOW,affected,libgnutls30,,3.7.9-2+deb12u7,,gnutls: gnutls: Information disclosure via hostname verification bypass,https://avd.aquasec.com/nvd/cve-2026-88647
+debian,CVE-2026-88648,LOW,affected,libgnutls30,,3.7.9-2+deb12u7,,gnutls: gnutls: Cross-domain certificate restriction bypass via incomplete X.509 validation,https://avd.aquasec.com/nvd/cve-2026-88648
+debian,CVE-2026-95184,LOW,affected,libgnutls30,,3.7.9-2+deb12u7,,gnutls: gnutls: legitimate user certificates incorrectly rejected causing denial of service,https://avd.aquasec.com/nvd/cve-2026-95184
+debian,CVE-2026-95210,LOW,affected,libgnutls30,,3.7.9-2+deb12u7,,gnutls: gnutls: certificates with invalid extensions incorrectly accepted,https://avd.aquasec.com/nvd/cve-2026-95210
+debian,CVE-2026-107364,HIGH,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: Unauthenticated KDC DoS based on ASN.1 decoder read overrun,https://avd.aquasec.com/nvd/cve-2026-107364
+debian,CVE-2026-112315,HIGH,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated memory leak DoS in RPCSEC_GSS buffer decode failure,https://avd.aquasec.com/nvd/cve-2026-112315
+debian,CVE-2026-112316,HIGH,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind authenticated memory leak DoS in xdr_krb5_tl_data() decode failure,https://avd.aquasec.com/nvd/cve-2026-112316
+debian,CVE-2026-112317,HIGH,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: MIT krb5 KDC unauthenticated memory leak DoS in KDB keytab key decryption error path,https://avd.aquasec.com/nvd/cve-2026-112317
+debian,CVE-2026-112318,HIGH,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind authenticated DoS exploiting dereference of null policy name pointers,https://avd.aquasec.com/nvd/cve-2026-112318
+debian,CVE-2026-112319,HIGH,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind authenticated memory exhaustion DoS via unbounded RPC XDR allocation,https://avd.aquasec.com/nvd/cve-2026-112319
+debian,CVE-2026-112320,HIGH,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated memory leak DoS via GSS-RPC auth flavor switching,https://avd.aquasec.com/nvd/cve-2026-112320
+debian,CVE-2026-112321,HIGH,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated memory leak DoS via AUTH_GSSAPI_INIT error paths,https://avd.aquasec.com/nvd/cve-2026-112321
+debian,CVE-2026-112322,HIGH,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated CPU DoS via AUTH_GSSAPI client states cleanup,https://avd.aquasec.com/nvd/cve-2026-112322
+debian,CVE-2026-112323,HIGH,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated memory exhaustion via failed AUTH_GSSAPI_INIT requests,https://avd.aquasec.com/nvd/cve-2026-112323
+debian,CVE-2026-118380,HIGH,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: kadmind: request alteration and protected information disclosure,https://avd.aquasec.com/nvd/cve-2026-118380
+debian,CVE-2026-119079,HIGH,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: MIT krb5 KDC unauthenticated CPU DoS via quadratic ASN.1 SEQUENCE OF decoding,https://avd.aquasec.com/nvd/cve-2026-119079
+debian,CVE-2026-71199,HIGH,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: Alteration of authentication indicators in CAMMAC container,https://avd.aquasec.com/nvd/cve-2026-71199
+debian,CVE-2026-71200,HIGH,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: Unauthenticated KDC NULL pointer dereference KDC DoS via crafted PKINIT pre-auth request,https://avd.aquasec.com/nvd/cve-2026-71200
+debian,CVE-2026-107708,MEDIUM,fix_deferred,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: krb5: Denial of Service via malformed PAC in S4U2Proxy requests,https://avd.aquasec.com/nvd/cve-2026-107708
+debian,CVE-2026-107778,MEDIUM,fix_deferred,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: krb5: Denial of Service via crafted forwarded credentials,https://avd.aquasec.com/nvd/cve-2026-107778
+debian,CVE-2026-107884,MEDIUM,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: Unauthorized key reset of protected principal via kpasswd,https://avd.aquasec.com/nvd/cve-2026-107884
+debian,CVE-2026-111423,MEDIUM,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: Improper authorization via flawed PAC checksum verification,https://avd.aquasec.com/nvd/cve-2026-111423
+debian,CVE-2026-112314,MEDIUM,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: MIT krb5 GSS-RPC client memory leak on XID mismatch retries,https://avd.aquasec.com/nvd/cve-2026-112314
+debian,CVE-2018-5709,LOW,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: integer overflow in dbentry->n_key_data in kadmin/dbutil/dump.c,https://avd.aquasec.com/nvd/cve-2018-5709
+debian,CVE-2024-26458,LOW,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c,https://avd.aquasec.com/nvd/cve-2024-26458
+debian,CVE-2024-26461,LOW,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c,https://avd.aquasec.com/nvd/cve-2024-26461
+debian,CVE-2026-11850,LOW,affected,libgssapi-krb5-2,,1.20.1-2+deb12u5,,krb5: krb5: integer underflow in berval2tl_data() leads to heap out-of-bounds read,https://avd.aquasec.com/nvd/cve-2026-11850
+debian,CVE-2026-107364,HIGH,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: Unauthenticated KDC DoS based on ASN.1 decoder read overrun,https://avd.aquasec.com/nvd/cve-2026-107364
+debian,CVE-2026-112315,HIGH,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated memory leak DoS in RPCSEC_GSS buffer decode failure,https://avd.aquasec.com/nvd/cve-2026-112315
+debian,CVE-2026-112316,HIGH,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind authenticated memory leak DoS in xdr_krb5_tl_data() decode failure,https://avd.aquasec.com/nvd/cve-2026-112316
+debian,CVE-2026-112317,HIGH,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: MIT krb5 KDC unauthenticated memory leak DoS in KDB keytab key decryption error path,https://avd.aquasec.com/nvd/cve-2026-112317
+debian,CVE-2026-112318,HIGH,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind authenticated DoS exploiting dereference of null policy name pointers,https://avd.aquasec.com/nvd/cve-2026-112318
+debian,CVE-2026-112319,HIGH,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind authenticated memory exhaustion DoS via unbounded RPC XDR allocation,https://avd.aquasec.com/nvd/cve-2026-112319
+debian,CVE-2026-112320,HIGH,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated memory leak DoS via GSS-RPC auth flavor switching,https://avd.aquasec.com/nvd/cve-2026-112320
+debian,CVE-2026-112321,HIGH,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated memory leak DoS via AUTH_GSSAPI_INIT error paths,https://avd.aquasec.com/nvd/cve-2026-112321
+debian,CVE-2026-112322,HIGH,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated CPU DoS via AUTH_GSSAPI client states cleanup,https://avd.aquasec.com/nvd/cve-2026-112322
+debian,CVE-2026-112323,HIGH,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated memory exhaustion via failed AUTH_GSSAPI_INIT requests,https://avd.aquasec.com/nvd/cve-2026-112323
+debian,CVE-2026-118380,HIGH,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: kadmind: request alteration and protected information disclosure,https://avd.aquasec.com/nvd/cve-2026-118380
+debian,CVE-2026-119079,HIGH,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: MIT krb5 KDC unauthenticated CPU DoS via quadratic ASN.1 SEQUENCE OF decoding,https://avd.aquasec.com/nvd/cve-2026-119079
+debian,CVE-2026-71199,HIGH,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: Alteration of authentication indicators in CAMMAC container,https://avd.aquasec.com/nvd/cve-2026-71199
+debian,CVE-2026-71200,HIGH,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: Unauthenticated KDC NULL pointer dereference KDC DoS via crafted PKINIT pre-auth request,https://avd.aquasec.com/nvd/cve-2026-71200
+debian,CVE-2026-107708,MEDIUM,fix_deferred,libk5crypto3,,1.20.1-2+deb12u5,,krb5: krb5: Denial of Service via malformed PAC in S4U2Proxy requests,https://avd.aquasec.com/nvd/cve-2026-107708
+debian,CVE-2026-107778,MEDIUM,fix_deferred,libk5crypto3,,1.20.1-2+deb12u5,,krb5: krb5: Denial of Service via crafted forwarded credentials,https://avd.aquasec.com/nvd/cve-2026-107778
+debian,CVE-2026-107884,MEDIUM,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: Unauthorized key reset of protected principal via kpasswd,https://avd.aquasec.com/nvd/cve-2026-107884
+debian,CVE-2026-111423,MEDIUM,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: Improper authorization via flawed PAC checksum verification,https://avd.aquasec.com/nvd/cve-2026-111423
+debian,CVE-2026-112314,MEDIUM,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: MIT krb5 GSS-RPC client memory leak on XID mismatch retries,https://avd.aquasec.com/nvd/cve-2026-112314
+debian,CVE-2018-5709,LOW,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: integer overflow in dbentry->n_key_data in kadmin/dbutil/dump.c,https://avd.aquasec.com/nvd/cve-2018-5709
+debian,CVE-2024-26458,LOW,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c,https://avd.aquasec.com/nvd/cve-2024-26458
+debian,CVE-2024-26461,LOW,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c,https://avd.aquasec.com/nvd/cve-2024-26461
+debian,CVE-2026-11850,LOW,affected,libk5crypto3,,1.20.1-2+deb12u5,,krb5: krb5: integer underflow in berval2tl_data() leads to heap out-of-bounds read,https://avd.aquasec.com/nvd/cve-2026-11850
+debian,CVE-2026-107364,HIGH,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: Unauthenticated KDC DoS based on ASN.1 decoder read overrun,https://avd.aquasec.com/nvd/cve-2026-107364
+debian,CVE-2026-112315,HIGH,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated memory leak DoS in RPCSEC_GSS buffer decode failure,https://avd.aquasec.com/nvd/cve-2026-112315
+debian,CVE-2026-112316,HIGH,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind authenticated memory leak DoS in xdr_krb5_tl_data() decode failure,https://avd.aquasec.com/nvd/cve-2026-112316
+debian,CVE-2026-112317,HIGH,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: MIT krb5 KDC unauthenticated memory leak DoS in KDB keytab key decryption error path,https://avd.aquasec.com/nvd/cve-2026-112317
+debian,CVE-2026-112318,HIGH,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind authenticated DoS exploiting dereference of null policy name pointers,https://avd.aquasec.com/nvd/cve-2026-112318
+debian,CVE-2026-112319,HIGH,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind authenticated memory exhaustion DoS via unbounded RPC XDR allocation,https://avd.aquasec.com/nvd/cve-2026-112319
+debian,CVE-2026-112320,HIGH,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated memory leak DoS via GSS-RPC auth flavor switching,https://avd.aquasec.com/nvd/cve-2026-112320
+debian,CVE-2026-112321,HIGH,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated memory leak DoS via AUTH_GSSAPI_INIT error paths,https://avd.aquasec.com/nvd/cve-2026-112321
+debian,CVE-2026-112322,HIGH,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated CPU DoS via AUTH_GSSAPI client states cleanup,https://avd.aquasec.com/nvd/cve-2026-112322
+debian,CVE-2026-112323,HIGH,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated memory exhaustion via failed AUTH_GSSAPI_INIT requests,https://avd.aquasec.com/nvd/cve-2026-112323
+debian,CVE-2026-118380,HIGH,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: kadmind: request alteration and protected information disclosure,https://avd.aquasec.com/nvd/cve-2026-118380
+debian,CVE-2026-119079,HIGH,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: MIT krb5 KDC unauthenticated CPU DoS via quadratic ASN.1 SEQUENCE OF decoding,https://avd.aquasec.com/nvd/cve-2026-119079
+debian,CVE-2026-71199,HIGH,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: Alteration of authentication indicators in CAMMAC container,https://avd.aquasec.com/nvd/cve-2026-71199
+debian,CVE-2026-71200,HIGH,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: Unauthenticated KDC NULL pointer dereference KDC DoS via crafted PKINIT pre-auth request,https://avd.aquasec.com/nvd/cve-2026-71200
+debian,CVE-2026-107708,MEDIUM,fix_deferred,libkrb5-3,,1.20.1-2+deb12u5,,krb5: krb5: Denial of Service via malformed PAC in S4U2Proxy requests,https://avd.aquasec.com/nvd/cve-2026-107708
+debian,CVE-2026-107778,MEDIUM,fix_deferred,libkrb5-3,,1.20.1-2+deb12u5,,krb5: krb5: Denial of Service via crafted forwarded credentials,https://avd.aquasec.com/nvd/cve-2026-107778
+debian,CVE-2026-107884,MEDIUM,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: Unauthorized key reset of protected principal via kpasswd,https://avd.aquasec.com/nvd/cve-2026-107884
+debian,CVE-2026-111423,MEDIUM,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: Improper authorization via flawed PAC checksum verification,https://avd.aquasec.com/nvd/cve-2026-111423
+debian,CVE-2026-112314,MEDIUM,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: MIT krb5 GSS-RPC client memory leak on XID mismatch retries,https://avd.aquasec.com/nvd/cve-2026-112314
+debian,CVE-2018-5709,LOW,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: integer overflow in dbentry->n_key_data in kadmin/dbutil/dump.c,https://avd.aquasec.com/nvd/cve-2018-5709
+debian,CVE-2024-26458,LOW,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c,https://avd.aquasec.com/nvd/cve-2024-26458
+debian,CVE-2024-26461,LOW,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c,https://avd.aquasec.com/nvd/cve-2024-26461
+debian,CVE-2026-11850,LOW,affected,libkrb5-3,,1.20.1-2+deb12u5,,krb5: krb5: integer underflow in berval2tl_data() leads to heap out-of-bounds read,https://avd.aquasec.com/nvd/cve-2026-11850
+debian,CVE-2026-107364,HIGH,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: Unauthenticated KDC DoS based on ASN.1 decoder read overrun,https://avd.aquasec.com/nvd/cve-2026-107364
+debian,CVE-2026-112315,HIGH,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated memory leak DoS in RPCSEC_GSS buffer decode failure,https://avd.aquasec.com/nvd/cve-2026-112315
+debian,CVE-2026-112316,HIGH,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind authenticated memory leak DoS in xdr_krb5_tl_data() decode failure,https://avd.aquasec.com/nvd/cve-2026-112316
+debian,CVE-2026-112317,HIGH,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: MIT krb5 KDC unauthenticated memory leak DoS in KDB keytab key decryption error path,https://avd.aquasec.com/nvd/cve-2026-112317
+debian,CVE-2026-112318,HIGH,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind authenticated DoS exploiting dereference of null policy name pointers,https://avd.aquasec.com/nvd/cve-2026-112318
+debian,CVE-2026-112319,HIGH,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind authenticated memory exhaustion DoS via unbounded RPC XDR allocation,https://avd.aquasec.com/nvd/cve-2026-112319
+debian,CVE-2026-112320,HIGH,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated memory leak DoS via GSS-RPC auth flavor switching,https://avd.aquasec.com/nvd/cve-2026-112320
+debian,CVE-2026-112321,HIGH,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated memory leak DoS via AUTH_GSSAPI_INIT error paths,https://avd.aquasec.com/nvd/cve-2026-112321
+debian,CVE-2026-112322,HIGH,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated CPU DoS via AUTH_GSSAPI client states cleanup,https://avd.aquasec.com/nvd/cve-2026-112322
+debian,CVE-2026-112323,HIGH,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: MIT krb5 kadmind unauthenticated memory exhaustion via failed AUTH_GSSAPI_INIT requests,https://avd.aquasec.com/nvd/cve-2026-112323
+debian,CVE-2026-118380,HIGH,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: kadmind: request alteration and protected information disclosure,https://avd.aquasec.com/nvd/cve-2026-118380
+debian,CVE-2026-119079,HIGH,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: MIT krb5 KDC unauthenticated CPU DoS via quadratic ASN.1 SEQUENCE OF decoding,https://avd.aquasec.com/nvd/cve-2026-119079
+debian,CVE-2026-71199,HIGH,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: Alteration of authentication indicators in CAMMAC container,https://avd.aquasec.com/nvd/cve-2026-71199
+debian,CVE-2026-71200,HIGH,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: Unauthenticated KDC NULL pointer dereference KDC DoS via crafted PKINIT pre-auth request,https://avd.aquasec.com/nvd/cve-2026-71200
+debian,CVE-2026-107708,MEDIUM,fix_deferred,libkrb5support0,,1.20.1-2+deb12u5,,krb5: krb5: Denial of Service via malformed PAC in S4U2Proxy requests,https://avd.aquasec.com/nvd/cve-2026-107708
+debian,CVE-2026-107778,MEDIUM,fix_deferred,libkrb5support0,,1.20.1-2+deb12u5,,krb5: krb5: Denial of Service via crafted forwarded credentials,https://avd.aquasec.com/nvd/cve-2026-107778
+debian,CVE-2026-107884,MEDIUM,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: Unauthorized key reset of protected principal via kpasswd,https://avd.aquasec.com/nvd/cve-2026-107884
+debian,CVE-2026-111423,MEDIUM,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: Improper authorization via flawed PAC checksum verification,https://avd.aquasec.com/nvd/cve-2026-111423
+debian,CVE-2026-112314,MEDIUM,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: MIT krb5 GSS-RPC client memory leak on XID mismatch retries,https://avd.aquasec.com/nvd/cve-2026-112314
+debian,CVE-2018-5709,LOW,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: integer overflow in dbentry->n_key_data in kadmin/dbutil/dump.c,https://avd.aquasec.com/nvd/cve-2018-5709
+debian,CVE-2024-26458,LOW,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c,https://avd.aquasec.com/nvd/cve-2024-26458
+debian,CVE-2024-26461,LOW,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c,https://avd.aquasec.com/nvd/cve-2024-26461
+debian,CVE-2026-11850,LOW,affected,libkrb5support0,,1.20.1-2+deb12u5,,krb5: krb5: integer underflow in berval2tl_data() leads to heap out-of-bounds read,https://avd.aquasec.com/nvd/cve-2026-11850
+debian,CVE-2023-2953,HIGH,affected,libldap-2.5-0,,2.5.13+dfsg-5,,openldap: null pointer dereference in  ber_memalloc_x  function,https://avd.aquasec.com/nvd/cve-2023-2953
+debian,CVE-2015-3276,LOW,affected,libldap-2.5-0,,2.5.13+dfsg-5,,openldap: incorrect multi-keyword mode cipherstring parsing,https://avd.aquasec.com/nvd/cve-2015-3276
+debian,CVE-2017-14159,LOW,affected,libldap-2.5-0,,2.5.13+dfsg-5,,openldap: Privilege escalation via PID file manipulation,https://avd.aquasec.com/nvd/cve-2017-14159
+debian,CVE-2017-17740,LOW,affected,libldap-2.5-0,,2.5.13+dfsg-5,,openldap: contrib/slapd-modules/nops/nops.c attempts to free stack buffer allowing remote attackers to cause a denial of service,https://avd.aquasec.com/nvd/cve-2017-17740
+debian,CVE-2020-15719,LOW,affected,libldap-2.5-0,,2.5.13+dfsg-5,,openldap: Certificate validation incorrectly matches name against CN-ID,https://avd.aquasec.com/nvd/cve-2020-15719
+debian,CVE-2026-22185,LOW,affected,libldap-2.5-0,,2.5.13+dfsg-5,,OpenLDAP: OpenLDAP LMDB: Denial of Service and Information Disclosure via Heap Buffer Underflow,https://avd.aquasec.com/nvd/cve-2026-22185
+debian,CVE-2026-53613,HIGH,affected,libmount1,,2.38.1-5+deb12u3,,util-linux: TOCTOU in the mount program via ancestor directory swap on target path,https://avd.aquasec.com/nvd/cve-2026-53613
+debian,CVE-2026-53615,HIGH,affected,libmount1,,2.38.1-5+deb12u3,,util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser,https://avd.aquasec.com/nvd/cve-2026-53615
+debian,CVE-2026-78410,HIGH,affected,libmount1,,2.38.1-5+deb12u3,,"util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",https://avd.aquasec.com/nvd/cve-2026-78410
+debian,CVE-2026-13595,MEDIUM,affected,libmount1,,2.38.1-5+deb12u3,,util-linux: util-linux: heap use-after-free in libblkid nested partition probing,https://avd.aquasec.com/nvd/cve-2026-13595
+debian,CVE-2026-27456,MEDIUM,affected,libmount1,,2.38.1-5+deb12u3,,util-linux: TOCTOU in the mount program when setting up loop devices,https://avd.aquasec.com/nvd/cve-2026-27456
+debian,CVE-2026-3184,MEDIUM,will_not_fix,libmount1,,2.38.1-5+deb12u3,,util-linux: util-linux: Access control bypass due to improper hostname canonicalization,https://avd.aquasec.com/nvd/cve-2026-3184
+debian,CVE-2022-0563,LOW,affected,libmount1,,2.38.1-5+deb12u3,,util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,https://avd.aquasec.com/nvd/cve-2022-0563
+debian,CVE-2025-14104,LOW,affected,libmount1,,2.38.1-5+deb12u3,,util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames,https://avd.aquasec.com/nvd/cve-2025-14104
+debian,CVE-2026-58055,MEDIUM,fix_deferred,libnghttp2-14,,1.52.0-1+deb12u3,,nghttp2: nghttp2: HTTP Request/Response Smuggling and Response-Queue Poisoning via ambiguous HTTP/1.1 Upgrade requests,https://avd.aquasec.com/nvd/cve-2026-58055
+debian,CVE-2026-13757,MEDIUM,fix_deferred,libp11-kit0,,0.24.1-2,,p11-kit: Stack exhaustion via unbounded recursion in RPC attribute parsing,https://avd.aquasec.com/nvd/cve-2026-13757
+debian,CVE-2026-18938,MEDIUM,fix_deferred,libp11-kit0,,0.24.1-2,,p11-kit: Integer overflow in RPC attribute-array length calculation can under-allocate nested attribute storage on 32 bit systems,https://avd.aquasec.com/nvd/cve-2026-18938
+debian,CVE-2025-6020,HIGH,affected,libpam-modules,,1.5.2-6+deb12u2,,linux-pam: Linux-pam directory Traversal,https://avd.aquasec.com/nvd/cve-2025-6020
+debian,CVE-2024-10041,MEDIUM,will_not_fix,libpam-modules,,1.5.2-6+deb12u2,,pam: libpam: Libpam vulnerable to read hashed password,https://avd.aquasec.com/nvd/cve-2024-10041
+debian,CVE-2026-54411,MEDIUM,fix_deferred,libpam-modules,,1.5.2-6+deb12u2,,linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module,https://avd.aquasec.com/nvd/cve-2026-54411
+debian,CVE-2025-6020,HIGH,affected,libpam-modules-bin,,1.5.2-6+deb12u2,,linux-pam: Linux-pam directory Traversal,https://avd.aquasec.com/nvd/cve-2025-6020
+debian,CVE-2024-10041,MEDIUM,will_not_fix,libpam-modules-bin,,1.5.2-6+deb12u2,,pam: libpam: Libpam vulnerable to read hashed password,https://avd.aquasec.com/nvd/cve-2024-10041
+debian,CVE-2026-54411,MEDIUM,fix_deferred,libpam-modules-bin,,1.5.2-6+deb12u2,,linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module,https://avd.aquasec.com/nvd/cve-2026-54411
+debian,CVE-2025-6020,HIGH,affected,libpam-runtime,,1.5.2-6+deb12u2,,linux-pam: Linux-pam directory Traversal,https://avd.aquasec.com/nvd/cve-2025-6020
+debian,CVE-2024-10041,MEDIUM,will_not_fix,libpam-runtime,,1.5.2-6+deb12u2,,pam: libpam: Libpam vulnerable to read hashed password,https://avd.aquasec.com/nvd/cve-2024-10041
+debian,CVE-2026-54411,MEDIUM,fix_deferred,libpam-runtime,,1.5.2-6+deb12u2,,linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module,https://avd.aquasec.com/nvd/cve-2026-54411
+debian,CVE-2025-6020,HIGH,affected,libpam0g,,1.5.2-6+deb12u2,,linux-pam: Linux-pam directory Traversal,https://avd.aquasec.com/nvd/cve-2025-6020
+debian,CVE-2024-10041,MEDIUM,will_not_fix,libpam0g,,1.5.2-6+deb12u2,,pam: libpam: Libpam vulnerable to read hashed password,https://avd.aquasec.com/nvd/cve-2024-10041
+debian,CVE-2026-54411,MEDIUM,fix_deferred,libpam0g,,1.5.2-6+deb12u2,,linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module,https://avd.aquasec.com/nvd/cve-2026-54411
+debian,CVE-2026-107161,MEDIUM,fixed,libsasl2-2,,2.1.28+dfsg-10,2.1.28+dfsg-10+deb12u1,cyrus-sasl: Heap buffer overflow in cyrus-sasl add_to_challenge() allows malicious server to crash or compromise DIGEST-MD5 clients,https://avd.aquasec.com/nvd/cve-2026-107161
+debian,CVE-2026-129483,LOW,affected,libsasl2-2,,2.1.28+dfsg-10,,Cyrus SASL through 2.1.28 contains an authentication bypass vulnerabil ...,https://avd.aquasec.com/nvd/cve-2026-129483
+debian,CVE-2026-107161,MEDIUM,fixed,libsasl2-modules-db,,2.1.28+dfsg-10,2.1.28+dfsg-10+deb12u1,cyrus-sasl: Heap buffer overflow in cyrus-sasl add_to_challenge() allows malicious server to crash or compromise DIGEST-MD5 clients,https://avd.aquasec.com/nvd/cve-2026-107161
+debian,CVE-2026-129483,LOW,affected,libsasl2-modules-db,,2.1.28+dfsg-10,,Cyrus SASL through 2.1.28 contains an authentication bypass vulnerabil ...,https://avd.aquasec.com/nvd/cve-2026-129483
+debian,CVE-2026-53613,HIGH,affected,libsmartcols1,,2.38.1-5+deb12u3,,util-linux: TOCTOU in the mount program via ancestor directory swap on target path,https://avd.aquasec.com/nvd/cve-2026-53613
+debian,CVE-2026-53615,HIGH,affected,libsmartcols1,,2.38.1-5+deb12u3,,util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser,https://avd.aquasec.com/nvd/cve-2026-53615
+debian,CVE-2026-78410,HIGH,affected,libsmartcols1,,2.38.1-5+deb12u3,,"util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",https://avd.aquasec.com/nvd/cve-2026-78410
+debian,CVE-2026-13595,MEDIUM,affected,libsmartcols1,,2.38.1-5+deb12u3,,util-linux: util-linux: heap use-after-free in libblkid nested partition probing,https://avd.aquasec.com/nvd/cve-2026-13595
+debian,CVE-2026-27456,MEDIUM,affected,libsmartcols1,,2.38.1-5+deb12u3,,util-linux: TOCTOU in the mount program when setting up loop devices,https://avd.aquasec.com/nvd/cve-2026-27456
+debian,CVE-2026-3184,MEDIUM,will_not_fix,libsmartcols1,,2.38.1-5+deb12u3,,util-linux: util-linux: Access control bypass due to improper hostname canonicalization,https://avd.aquasec.com/nvd/cve-2026-3184
+debian,CVE-2022-0563,LOW,affected,libsmartcols1,,2.38.1-5+deb12u3,,util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,https://avd.aquasec.com/nvd/cve-2022-0563
+debian,CVE-2025-14104,LOW,affected,libsmartcols1,,2.38.1-5+deb12u3,,util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames,https://avd.aquasec.com/nvd/cve-2025-14104
+debian,CVE-2026-107493,MEDIUM,affected,libssl3,,3.0.22-1~deb12u2,,Issue summary: When an application passes a stack to PEM_X509_INFO_rea ...,https://avd.aquasec.com/nvd/cve-2026-107493
+debian,CVE-2026-107496,MEDIUM,affected,libssl3,,3.0.22-1~deb12u2,,Issue summary: Encrypting a CMS message to an EC certificate whose gro ...,https://avd.aquasec.com/nvd/cve-2026-107496
+debian,CVE-2026-124709,MEDIUM,affected,libssl3,,3.0.22-1~deb12u2,,Issue summary: A QUIC server that rejects a stream opened by the peer  ...,https://avd.aquasec.com/nvd/cve-2026-124709
+debian,CVE-2026-35190,MEDIUM,affected,libssl3,,3.0.22-1~deb12u2,,Issue summary: A server configured with the Suite B certificate flag t ...,https://avd.aquasec.com/nvd/cve-2026-35190
+debian,CVE-2026-88822,MEDIUM,affected,libssl3,,3.0.22-1~deb12u2,,"Issue summary: QUIC, when performing automated peer detection, may all ...",https://avd.aquasec.com/nvd/cve-2026-88822
+debian,CVE-2026-88823,MEDIUM,affected,libssl3,,3.0.22-1~deb12u2,,Issue summary: The AES-GCM-SIV implementation treats a zero-length Add ...,https://avd.aquasec.com/nvd/cve-2026-88823
+debian,CVE-2026-95691,MEDIUM,affected,libssl3,,3.0.22-1~deb12u2,,Issue summary: A retransmitted QUIC CRYPTO frame can release packet st ...,https://avd.aquasec.com/nvd/cve-2026-95691
+debian,CVE-2026-95692,MEDIUM,affected,libssl3,,3.0.22-1~deb12u2,,Issue summary: Setting an AES-GCM-SIV IV shorter than the expected non ...,https://avd.aquasec.com/nvd/cve-2026-95692
+debian,CVE-2025-27587,LOW,affected,libssl3,,3.0.22-1~deb12u2,,OpenSSL 3.0.0 through 3.3.2 on the PowerPC architecture is vulnerable  ...,https://avd.aquasec.com/nvd/cve-2025-27587
+debian,CVE-2026-95690,UNKNOWN,affected,libssl3,,3.0.22-1~deb12u2,,Receiving crafted out-of-sequence DTLS handshake fragments may cause O ...,https://avd.aquasec.com/nvd/cve-2026-95690
+debian,CVE-2026-102010,MEDIUM,will_not_fix,libstdc++6,,12.2.0-14+deb12u1,,gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: Denial of Service via use-after-free in binary heap erase_if,https://avd.aquasec.com/nvd/cve-2026-102010
+debian,CVE-2026-114690,MEDIUM,affected,libstdc++6,,12.2.0-14+deb12u1,,gcc: Confirmed out-of-bounds read/write in libstdc++ parallel `std,https://avd.aquasec.com/nvd/cve-2026-114690
+debian,CVE-2026-114691,MEDIUM,affected,libstdc++6,,12.2.0-14+deb12u1,,gcc: Integer wrap in `std,https://avd.aquasec.com/nvd/cve-2026-114691
+debian,CVE-2026-125709,MEDIUM,affected,libstdc++6,,12.2.0-14+deb12u1,,libstdc++: overflow leaves streambuf in inconsistent state on I/O error.,https://avd.aquasec.com/nvd/cve-2026-125709
+debian,CVE-2026-95619,MEDIUM,fix_deferred,libstdc++6,,12.2.0-14+deb12u1,,gcc: libstdc++ integer overflow in `new` operator,https://avd.aquasec.com/nvd/cve-2026-95619
+debian,CVE-2022-27943,LOW,affected,libstdc++6,,12.2.0-14+deb12u1,,binutils: libiberty/rust-demangle.c in GNU GCC 11.2 allows stack exhaustion in demangle_const,https://avd.aquasec.com/nvd/cve-2022-27943
+debian,CVE-2026-115456,LOW,affected,libstdc++6,,12.2.0-14+deb12u1,,gcc: Out-of-bounds read in std::from_chars,https://avd.aquasec.com/nvd/cve-2026-115456
+debian,CVE-2026-16742,HIGH,fix_deferred,libsystemd0,,252.39-1~deb12u2,,systemd: systemd-homed: Local privilege escalation via missing home-record signature verification,https://avd.aquasec.com/nvd/cve-2026-16742
+debian,CVE-2026-15059,MEDIUM,fix_deferred,libsystemd0,,252.39-1~deb12u2,,systemd: systemd-oomd: Unprivileged users can terminate arbitrary processes via IPC API,https://avd.aquasec.com/nvd/cve-2026-15059
+debian,CVE-2013-4392,LOW,affected,libsystemd0,,252.39-1~deb12u2,,systemd: TOCTOU race condition when updating file permissions and SELinux security contexts,https://avd.aquasec.com/nvd/cve-2013-4392
+debian,CVE-2023-31437,LOW,affected,libsystemd0,,252.39-1~deb12u2,,An issue was discovered in systemd 253. An attacker can modify a seale ...,https://avd.aquasec.com/nvd/cve-2023-31437
+debian,CVE-2023-31438,LOW,affected,libsystemd0,,252.39-1~deb12u2,,An issue was discovered in systemd 253. An attacker can truncate a sea ...,https://avd.aquasec.com/nvd/cve-2023-31438
+debian,CVE-2023-31439,LOW,affected,libsystemd0,,252.39-1~deb12u2,,An issue was discovered in systemd 253. An attacker can modify the con ...,https://avd.aquasec.com/nvd/cve-2023-31439
+debian,CVE-2026-40228,LOW,affected,libsystemd0,,252.39-1~deb12u2,,systemd: systemd-journald: Unintended output to user terminals via logger command,https://avd.aquasec.com/nvd/cve-2026-40228
+debian,CVE-2025-13151,LOW,affected,libtasn1-6,,4.19.0-2+deb12u1,,libtasn1: libtasn1: Denial of Service via stack-based buffer overflow in asn1_expend_octet_string,https://avd.aquasec.com/nvd/cve-2025-13151
+debian,CVE-2025-69720,HIGH,affected,libtinfo6,,6.4-4,,ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,https://avd.aquasec.com/nvd/cve-2025-69720
+debian,CVE-2023-50495,MEDIUM,affected,libtinfo6,,6.4-4,,ncurses: segmentation fault via _nc_wrap_entry(),https://avd.aquasec.com/nvd/cve-2023-50495
+debian,CVE-2025-6141,LOW,affected,libtinfo6,,6.4-4,,gnu-ncurses: ncurses Stack Buffer Overflow,https://avd.aquasec.com/nvd/cve-2025-6141
+debian,CVE-2026-16742,HIGH,fix_deferred,libudev1,,252.39-1~deb12u2,,systemd: systemd-homed: Local privilege escalation via missing home-record signature verification,https://avd.aquasec.com/nvd/cve-2026-16742
+debian,CVE-2026-15059,MEDIUM,fix_deferred,libudev1,,252.39-1~deb12u2,,systemd: systemd-oomd: Unprivileged users can terminate arbitrary processes via IPC API,https://avd.aquasec.com/nvd/cve-2026-15059
+debian,CVE-2013-4392,LOW,affected,libudev1,,252.39-1~deb12u2,,systemd: TOCTOU race condition when updating file permissions and SELinux security contexts,https://avd.aquasec.com/nvd/cve-2013-4392
+debian,CVE-2023-31437,LOW,affected,libudev1,,252.39-1~deb12u2,,An issue was discovered in systemd 253. An attacker can modify a seale ...,https://avd.aquasec.com/nvd/cve-2023-31437
+debian,CVE-2023-31438,LOW,affected,libudev1,,252.39-1~deb12u2,,An issue was discovered in systemd 253. An attacker can truncate a sea ...,https://avd.aquasec.com/nvd/cve-2023-31438
+debian,CVE-2023-31439,LOW,affected,libudev1,,252.39-1~deb12u2,,An issue was discovered in systemd 253. An attacker can modify the con ...,https://avd.aquasec.com/nvd/cve-2023-31439
+debian,CVE-2026-40228,LOW,affected,libudev1,,252.39-1~deb12u2,,systemd: systemd-journald: Unintended output to user terminals via logger command,https://avd.aquasec.com/nvd/cve-2026-40228
+debian,CVE-2026-53613,HIGH,affected,libuuid1,,2.38.1-5+deb12u3,,util-linux: TOCTOU in the mount program via ancestor directory swap on target path,https://avd.aquasec.com/nvd/cve-2026-53613
+debian,CVE-2026-53615,HIGH,affected,libuuid1,,2.38.1-5+deb12u3,,util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser,https://avd.aquasec.com/nvd/cve-2026-53615
+debian,CVE-2026-78410,HIGH,affected,libuuid1,,2.38.1-5+deb12u3,,"util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",https://avd.aquasec.com/nvd/cve-2026-78410
+debian,CVE-2026-13595,MEDIUM,affected,libuuid1,,2.38.1-5+deb12u3,,util-linux: util-linux: heap use-after-free in libblkid nested partition probing,https://avd.aquasec.com/nvd/cve-2026-13595
+debian,CVE-2026-27456,MEDIUM,affected,libuuid1,,2.38.1-5+deb12u3,,util-linux: TOCTOU in the mount program when setting up loop devices,https://avd.aquasec.com/nvd/cve-2026-27456
+debian,CVE-2026-3184,MEDIUM,will_not_fix,libuuid1,,2.38.1-5+deb12u3,,util-linux: util-linux: Access control bypass due to improper hostname canonicalization,https://avd.aquasec.com/nvd/cve-2026-3184
+debian,CVE-2022-0563,LOW,affected,libuuid1,,2.38.1-5+deb12u3,,util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,https://avd.aquasec.com/nvd/cve-2022-0563
+debian,CVE-2025-14104,LOW,affected,libuuid1,,2.38.1-5+deb12u3,,util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames,https://avd.aquasec.com/nvd/cve-2025-14104
+debian,CVE-2007-5686,LOW,affected,login,,1:4.13+dfsg1-1+deb12u2,,initscripts in rPath Linux 1 sets insecure permissions for the /var/lo ...,https://avd.aquasec.com/nvd/cve-2007-5686
+debian,CVE-2024-56433,LOW,affected,login,,1:4.13+dfsg1-1+deb12u2,,shadow-utils: Default subordinate ID configuration in /etc/login.defs could lead to compromise,https://avd.aquasec.com/nvd/cve-2024-56433
+debian,TEMP-0628843-DBAD28,LOW,affected,login,,1:4.13+dfsg1-1+deb12u2,,[more related to CVE-2005-4890],https://security-tracker.debian.org/tracker/TEMP-0628843-DBAD28
+debian,CVE-2026-53613,HIGH,affected,mount,,2.38.1-5+deb12u3,,util-linux: TOCTOU in the mount program via ancestor directory swap on target path,https://avd.aquasec.com/nvd/cve-2026-53613
+debian,CVE-2026-53615,HIGH,affected,mount,,2.38.1-5+deb12u3,,util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser,https://avd.aquasec.com/nvd/cve-2026-53615
+debian,CVE-2026-78410,HIGH,affected,mount,,2.38.1-5+deb12u3,,"util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",https://avd.aquasec.com/nvd/cve-2026-78410
+debian,CVE-2026-13595,MEDIUM,affected,mount,,2.38.1-5+deb12u3,,util-linux: util-linux: heap use-after-free in libblkid nested partition probing,https://avd.aquasec.com/nvd/cve-2026-13595
+debian,CVE-2026-27456,MEDIUM,affected,mount,,2.38.1-5+deb12u3,,util-linux: TOCTOU in the mount program when setting up loop devices,https://avd.aquasec.com/nvd/cve-2026-27456
+debian,CVE-2026-3184,MEDIUM,will_not_fix,mount,,2.38.1-5+deb12u3,,util-linux: util-linux: Access control bypass due to improper hostname canonicalization,https://avd.aquasec.com/nvd/cve-2026-3184
+debian,CVE-2022-0563,LOW,affected,mount,,2.38.1-5+deb12u3,,util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,https://avd.aquasec.com/nvd/cve-2022-0563
+debian,CVE-2025-14104,LOW,affected,mount,,2.38.1-5+deb12u3,,util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames,https://avd.aquasec.com/nvd/cve-2025-14104
+debian,CVE-2025-69720,HIGH,affected,ncurses-base,,6.4-4,,ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,https://avd.aquasec.com/nvd/cve-2025-69720
+debian,CVE-2023-50495,MEDIUM,affected,ncurses-base,,6.4-4,,ncurses: segmentation fault via _nc_wrap_entry(),https://avd.aquasec.com/nvd/cve-2023-50495
+debian,CVE-2025-6141,LOW,affected,ncurses-base,,6.4-4,,gnu-ncurses: ncurses Stack Buffer Overflow,https://avd.aquasec.com/nvd/cve-2025-6141
+debian,CVE-2025-69720,HIGH,affected,ncurses-bin,,6.4-4,,ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,https://avd.aquasec.com/nvd/cve-2025-69720
+debian,CVE-2023-50495,MEDIUM,affected,ncurses-bin,,6.4-4,,ncurses: segmentation fault via _nc_wrap_entry(),https://avd.aquasec.com/nvd/cve-2023-50495
+debian,CVE-2025-6141,LOW,affected,ncurses-bin,,6.4-4,,gnu-ncurses: ncurses Stack Buffer Overflow,https://avd.aquasec.com/nvd/cve-2025-6141
+debian,CVE-2026-107493,MEDIUM,affected,openssl,,3.0.22-1~deb12u2,,Issue summary: When an application passes a stack to PEM_X509_INFO_rea ...,https://avd.aquasec.com/nvd/cve-2026-107493
+debian,CVE-2026-107496,MEDIUM,affected,openssl,,3.0.22-1~deb12u2,,Issue summary: Encrypting a CMS message to an EC certificate whose gro ...,https://avd.aquasec.com/nvd/cve-2026-107496
+debian,CVE-2026-124709,MEDIUM,affected,openssl,,3.0.22-1~deb12u2,,Issue summary: A QUIC server that rejects a stream opened by the peer  ...,https://avd.aquasec.com/nvd/cve-2026-124709
+debian,CVE-2026-35190,MEDIUM,affected,openssl,,3.0.22-1~deb12u2,,Issue summary: A server configured with the Suite B certificate flag t ...,https://avd.aquasec.com/nvd/cve-2026-35190
+debian,CVE-2026-88822,MEDIUM,affected,openssl,,3.0.22-1~deb12u2,,"Issue summary: QUIC, when performing automated peer detection, may all ...",https://avd.aquasec.com/nvd/cve-2026-88822
+debian,CVE-2026-88823,MEDIUM,affected,openssl,,3.0.22-1~deb12u2,,Issue summary: The AES-GCM-SIV implementation treats a zero-length Add ...,https://avd.aquasec.com/nvd/cve-2026-88823
+debian,CVE-2026-95691,MEDIUM,affected,openssl,,3.0.22-1~deb12u2,,Issue summary: A retransmitted QUIC CRYPTO frame can release packet st ...,https://avd.aquasec.com/nvd/cve-2026-95691
+debian,CVE-2026-95692,MEDIUM,affected,openssl,,3.0.22-1~deb12u2,,Issue summary: Setting an AES-GCM-SIV IV shorter than the expected non ...,https://avd.aquasec.com/nvd/cve-2026-95692
+debian,CVE-2025-27587,LOW,affected,openssl,,3.0.22-1~deb12u2,,OpenSSL 3.0.0 through 3.3.2 on the PowerPC architecture is vulnerable  ...,https://avd.aquasec.com/nvd/cve-2025-27587
+debian,CVE-2026-95690,UNKNOWN,affected,openssl,,3.0.22-1~deb12u2,,Receiving crafted out-of-sequence DTLS handshake fragments may cause O ...,https://avd.aquasec.com/nvd/cve-2026-95690
+debian,CVE-2007-5686,LOW,affected,passwd,,1:4.13+dfsg1-1+deb12u2,,initscripts in rPath Linux 1 sets insecure permissions for the /var/lo ...,https://avd.aquasec.com/nvd/cve-2007-5686
+debian,CVE-2024-56433,LOW,affected,passwd,,1:4.13+dfsg1-1+deb12u2,,shadow-utils: Default subordinate ID configuration in /etc/login.defs could lead to compromise,https://avd.aquasec.com/nvd/cve-2024-56433
+debian,TEMP-0628843-DBAD28,LOW,affected,passwd,,1:4.13+dfsg1-1+deb12u2,,[more related to CVE-2005-4890],https://security-tracker.debian.org/tracker/TEMP-0628843-DBAD28
+debian,CVE-2026-9538,HIGH,fix_deferred,perl-base,,5.36.0-7+deb12u4,,perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size,https://avd.aquasec.com/nvd/cve-2026-9538
+debian,CVE-2026-15534,MEDIUM,affected,perl-base,,5.36.0-7+deb12u4,,perl: Perl: Arbitrary code execution via out-of-bounds memory access in regular expression engine.,https://avd.aquasec.com/nvd/cve-2026-15534
+debian,CVE-2026-82560,MEDIUM,affected,perl-base,,5.36.0-7+deb12u4,,Pod::Text versions before 6.1.1 for Perl allow CPU and memory exhausti ...,https://avd.aquasec.com/nvd/cve-2026-82560
+debian,CVE-2011-4116,LOW,affected,perl-base,,5.36.0-7+deb12u4,,perl: File:: Temp insecure temporary file handling,https://avd.aquasec.com/nvd/cve-2011-4116
+debian,CVE-2023-31486,LOW,affected,perl-base,,5.36.0-7+deb12u4,,http-tiny: perl: insecure TLS cert default,https://avd.aquasec.com/nvd/cve-2023-31486
+debian,TEMP-0517018-A83CE6,LOW,affected,sysvinit-utils,,3.06-4,,[sysvinit: no-root option in expert installer exposes locally exploitable security flaw],https://security-tracker.debian.org/tracker/TEMP-0517018-A83CE6
+debian,CVE-2026-18477,MEDIUM,fix_deferred,tar,,1.34+dfsg-1.2+deb12u1,,tar: tar: TOCTOU in incremental dumpdir 'X' rename handling allows restore path escape,https://avd.aquasec.com/nvd/cve-2026-18477
+debian,CVE-2026-18508,MEDIUM,fix_deferred,tar,,1.34+dfsg-1.2+deb12u1,,tar: tar: --one-top-level hardlink targets not confined to top-level directory enabling arbitrary file overwrite,https://avd.aquasec.com/nvd/cve-2026-18508
+debian,CVE-2026-5704,MEDIUM,affected,tar,,1.34+dfsg-1.2+deb12u1,,tar: tar: Hidden file injection via crafted archives,https://avd.aquasec.com/nvd/cve-2026-5704
+debian,CVE-2005-2541,LOW,affected,tar,,1.34+dfsg-1.2+deb12u1,,tar: does not properly warn the user when extracting setuid or setgid files,https://avd.aquasec.com/nvd/cve-2005-2541
+debian,TEMP-0290435-0B57B5,LOW,affected,tar,,1.34+dfsg-1.2+deb12u1,,[tar's rmt command may have undesired side effects],https://security-tracker.debian.org/tracker/TEMP-0290435-0B57B5
+debian,DLA-4867-1,UNKNOWN,fixed,tzdata,,2026e-0+deb12u1,2026f-0+deb12u1,tzdata - new timezone database,
+debian,CVE-2026-53613,HIGH,affected,util-linux,,2.38.1-5+deb12u3,,util-linux: TOCTOU in the mount program via ancestor directory swap on target path,https://avd.aquasec.com/nvd/cve-2026-53613
+debian,CVE-2026-53615,HIGH,affected,util-linux,,2.38.1-5+deb12u3,,util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser,https://avd.aquasec.com/nvd/cve-2026-53615
+debian,CVE-2026-78410,HIGH,affected,util-linux,,2.38.1-5+deb12u3,,"util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",https://avd.aquasec.com/nvd/cve-2026-78410
+debian,CVE-2026-13595,MEDIUM,affected,util-linux,,2.38.1-5+deb12u3,,util-linux: util-linux: heap use-after-free in libblkid nested partition probing,https://avd.aquasec.com/nvd/cve-2026-13595
+debian,CVE-2026-27456,MEDIUM,affected,util-linux,,2.38.1-5+deb12u3,,util-linux: TOCTOU in the mount program when setting up loop devices,https://avd.aquasec.com/nvd/cve-2026-27456
+debian,CVE-2026-3184,MEDIUM,will_not_fix,util-linux,,2.38.1-5+deb12u3,,util-linux: util-linux: Access control bypass due to improper hostname canonicalization,https://avd.aquasec.com/nvd/cve-2026-3184
+debian,CVE-2022-0563,LOW,affected,util-linux,,2.38.1-5+deb12u3,,util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,https://avd.aquasec.com/nvd/cve-2022-0563
+debian,CVE-2025-14104,LOW,affected,util-linux,,2.38.1-5+deb12u3,,util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames,https://avd.aquasec.com/nvd/cve-2025-14104
+debian,CVE-2026-53613,HIGH,affected,util-linux-extra,,2.38.1-5+deb12u3,,util-linux: TOCTOU in the mount program via ancestor directory swap on target path,https://avd.aquasec.com/nvd/cve-2026-53613
+debian,CVE-2026-53615,HIGH,affected,util-linux-extra,,2.38.1-5+deb12u3,,util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser,https://avd.aquasec.com/nvd/cve-2026-53615
+debian,CVE-2026-78410,HIGH,affected,util-linux-extra,,2.38.1-5+deb12u3,,"util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",https://avd.aquasec.com/nvd/cve-2026-78410
+debian,CVE-2026-13595,MEDIUM,affected,util-linux-extra,,2.38.1-5+deb12u3,,util-linux: util-linux: heap use-after-free in libblkid nested partition probing,https://avd.aquasec.com/nvd/cve-2026-13595
+debian,CVE-2026-27456,MEDIUM,affected,util-linux-extra,,2.38.1-5+deb12u3,,util-linux: TOCTOU in the mount program when setting up loop devices,https://avd.aquasec.com/nvd/cve-2026-27456
+debian,CVE-2026-3184,MEDIUM,will_not_fix,util-linux-extra,,2.38.1-5+deb12u3,,util-linux: util-linux: Access control bypass due to improper hostname canonicalization,https://avd.aquasec.com/nvd/cve-2026-3184
+debian,CVE-2022-0563,LOW,affected,util-linux-extra,,2.38.1-5+deb12u3,,util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,https://avd.aquasec.com/nvd/cve-2022-0563
+debian,CVE-2025-14104,LOW,affected,util-linux-extra,,2.38.1-5+deb12u3,,util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames,https://avd.aquasec.com/nvd/cve-2025-14104
+debian,CVE-2023-45853,CRITICAL,will_not_fix,zlib1g,,1:1.2.13.dfsg-1,,zlib: integer overflow and resultant heap-based buffer overflow in zipOpenNewFileInZip4_6,https://avd.aquasec.com/nvd/cve-2023-45853
+debian,CVE-2026-85091,HIGH,affected,zlib1g,,1:1.2.13.dfsg-1,,zlib: zlib: Heap buffer overflow in gz_vacate() allows arbitrary code execution,https://avd.aquasec.com/nvd/cve-2026-85091
+debian,CVE-2026-27171,MEDIUM,affected,zlib1g,,1:1.2.13.dfsg-1,,zlib: zlib: Denial of Service via infinite loop in CRC32 combine functions,https://avd.aquasec.com/nvd/cve-2026-27171
+node-pkg,CVE-2026-102276,HIGH,fixed,brace-expansion,usr/local/lib/node_modules/npm/node_modules/brace-expansion/package.json,5.0.9,"5.0.10, 3.0.7, 2.1.5, 1.1.19",brace-expansion: brace-expansion: Denial of Service via stack exhaustion from crafted brace patterns,https://avd.aquasec.com/nvd/cve-2026-102276
+node-pkg,CVE-2026-102278,HIGH,fixed,brace-expansion,usr/local/lib/node_modules/npm/node_modules/brace-expansion/package.json,5.0.9,"5.0.11, 3.0.8, 2.1.6, 1.1.20",brace-expansion: brace-expansion: Denial of Service via uncontrolled recursion in nested brace patterns,https://avd.aquasec.com/nvd/cve-2026-102278
+node-pkg,CVE-2026-102277,MEDIUM,fixed,brace-expansion,usr/local/lib/node_modules/npm/node_modules/brace-expansion/package.json,5.0.9,"5.0.12, 3.0.9, 2.1.7, 1.1.21",brace-expansion: brace-expansion: Denial of Service via crafted brace patterns,https://avd.aquasec.com/nvd/cve-2026-102277
+node-pkg,CVE-2026-118773,MEDIUM,fixed,glob,usr/local/lib/node_modules/npm/node_modules/glob/package.json,13.0.6,14.0.2,glob: glob: Denial of Service (DoS) via incomplete traversal cancellation,https://avd.aquasec.com/nvd/cve-2026-118773
+node-pkg,CVE-2026-101910,MEDIUM,fixed,ip-address,usr/local/lib/node_modules/npm/node_modules/ip-address/package.json,10.5.0,10.5.1,ip-address: ip-address: Security boundary bypass via unclassified NAT64 local-use address range,https://avd.aquasec.com/nvd/cve-2026-101910
+node-pkg,CVE-2026-101911,MEDIUM,fixed,ip-address,usr/local/lib/node_modules/npm/node_modules/ip-address/package.json,10.5.0,10.7.1,ip-address: ip-address: Denial of Service via unbounded IPv6 address parsing,https://avd.aquasec.com/nvd/cve-2026-101911
+node-pkg,CVE-2026-101912,MEDIUM,fixed,ip-address,usr/local/lib/node_modules/npm/node_modules/ip-address/package.json,10.5.0,10.7.1,ip-address: ip-address: Access control bypass via cross-family subnet comparison,https://avd.aquasec.com/nvd/cve-2026-101912
+node-pkg,CVE-2026-101913,MEDIUM,fixed,ip-address,usr/local/lib/node_modules/npm/node_modules/ip-address/package.json,10.5.0,10.5.1,ip-address: ip-address: Security bypass via incomplete IPv6 link-local address validation,https://avd.aquasec.com/nvd/cve-2026-101913
+node-pkg,CVE-2026-111997,MEDIUM,fixed,ip-address,usr/local/lib/node_modules/npm/node_modules/ip-address/package.json,10.5.0,10.7.4,ip-address: ip-address: Denial of Service via excessive percent characters in IPv6 address input,https://avd.aquasec.com/nvd/cve-2026-111997
+node-pkg,CVE-2026-118764,MEDIUM,fixed,minimatch,usr/local/lib/node_modules/npm/node_modules/minimatch/package.json,10.2.5,11.0.1,minimatch: minimatch: Denial of Service via crafted glob pattern expansion,https://avd.aquasec.com/nvd/cve-2026-118764
+node-pkg,CVE-2026-119351,MEDIUM,fixed,next,app/node_modules/.pnpm/next@16.4.2_@babel+core@7.29.7_supports-color@8.1.1__@opentelemetry+api@1.9.1_@playwrig_f047e42a4d9df60e9bacbd4e0bf5185b/node_modules/next/package.json,16.4.2,16.4.5,Next.js: Cache leak across root param values in nested 'use cache' functions via delayed inner stream metadata,https://avd.aquasec.com/nvd/cve-2026-119351
+node-pkg,CVE-2026-119790,MEDIUM,fixed,next,app/node_modules/.pnpm/next@16.4.2_@babel+core@7.29.7_supports-color@8.1.1__@opentelemetry+api@1.9.1_@playwrig_f047e42a4d9df60e9bacbd4e0bf5185b/node_modules/next/package.json,16.4.2,16.4.5,Next.js: Information disclosure across root params when a 'use cache' function is called through unstable_cache(),https://avd.aquasec.com/nvd/cve-2026-119790
+node-pkg,CVE-2026-104844,MEDIUM,fixed,postcss-selector-parser,usr/local/lib/node_modules/npm/node_modules/postcss-selector-parser/package.json,7.1.4,"7.1.6, 6.1.5",postcss-selector-parser: postcss-selector-parser: Denial of Service via crafted CSS selectors,https://avd.aquasec.com/nvd/cve-2026-104844
+node-pkg,CVE-2026-109383,HIGH,fixed,undici,usr/local/lib/node_modules/npm/node_modules/undici/package.json,6.28.0,"6.29.1, 7.30.1, 8.12.2",undici: undici: Certificate validation bypass via dropped TLS options in Agent,https://avd.aquasec.com/nvd/cve-2026-109383
+node-pkg,CVE-2026-109869,HIGH,fixed,undici,usr/local/lib/node_modules/npm/node_modules/undici/package.json,6.28.0,"6.29.1, 7.30.1, 8.12.2",undici: undici: Denial of Service via unhandled stream error on excessive content encodings,https://avd.aquasec.com/nvd/cve-2026-109869
+node-pkg,CVE-2026-19534,HIGH,fixed,undici,usr/local/lib/node_modules/npm/node_modules/undici/package.json,6.28.0,"6.28.1, 7.29.1, 8.10.2",undici: undici: Denial of Service via unrequested WebSocket subprotocol,https://avd.aquasec.com/nvd/cve-2026-19534
+node-pkg,CVE-2026-87018,HIGH,fixed,undici,usr/local/lib/node_modules/npm/node_modules/undici/package.json,6.28.0,"6.29.1, 7.30.1, 8.12.2",undici: undici: Denial of Service via TLS renegotiation with mismatched certificate,https://avd.aquasec.com/nvd/cve-2026-87018
+node-pkg,CVE-2026-109924,MEDIUM,fixed,undici,usr/local/lib/node_modules/npm/node_modules/undici/package.json,6.28.0,"6.29.1, 7.30.1, 8.12.2",undici: undici: Denial of Service via memory exhaustion in EventSource client,https://avd.aquasec.com/nvd/cve-2026-109924
+node-pkg,CVE-2026-109932,MEDIUM,fixed,undici,usr/local/lib/node_modules/npm/node_modules/undici/package.json,6.28.0,"6.29.1, 7.30.1, 8.12.2",undici: undici: Denial of Service via unbounded WebSocket PONG buffering,https://avd.aquasec.com/nvd/cve-2026-109932
+node-pkg,CVE-2026-85024,MEDIUM,fixed,undici,usr/local/lib/node_modules/npm/node_modules/undici/package.json,6.28.0,"6.28.1, 7.29.1, 8.10.2",undici: undici: Denial of Service via unhandled error in WebSocket permessage-deflate decompression,https://avd.aquasec.com/nvd/cve-2026-85024
+node-pkg,CVE-2026-18540,LOW,fixed,undici,usr/local/lib/node_modules/npm/node_modules/undici/package.json,6.28.0,"6.28.1, 7.29.1, 8.10.2",undici: undici: HTTP response splitting via retry interceptor,https://avd.aquasec.com/nvd/cve-2026-18540

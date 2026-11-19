@@ -1,0 +1,56 @@
+{
+  "created_at": "2026-11-19T10:19:24.520448002Z",
+  "scanner": {
+    "Version": "0.76.2"
+  },
+  "occurrences": 455,
+  "distinct_advisory_ids": 210,
+  "severity": {
+    "CRITICAL": 1,
+    "HIGH": 112,
+    "MEDIUM": 175,
+    "LOW": 157,
+    "UNKNOWN": 10
+  },
+  "occurrences_with_fix_available": 26,
+  "distinct_advisory_ids_with_fix_available": 24,
+  "targets": [
+    {
+      "target": "/scan/rallly.tar (debian 12.15)",
+      "type": "debian",
+      "package_inventory_entries": 105,
+      "occurrences": 434,
+      "severity": {
+        "CRITICAL": 1,
+        "HIGH": 106,
+        "MEDIUM": 161,
+        "LOW": 156,
+        "UNKNOWN": 10
+      },
+      "status": {
+        "fixed": 5,
+        "affected": 326,
+        "will_not_fix": 17,
+        "fix_deferred": 86
+      },
+      "occurrences_with_fix_available": 5
+    },
+    {
+      "target": "Node.js",
+      "type": "node-pkg",
+      "package_inventory_entries": 370,
+      "occurrences": 21,
+      "severity": {
+        "CRITICAL": 0,
+        "HIGH": 6,
+        "MEDIUM": 14,
+        "LOW": 1,
+        "UNKNOWN": 0
+      },
+      "status": {
+        "fixed": 21
+      },
+      "occurrences_with_fix_available": 21
+    }
+  ]
+}

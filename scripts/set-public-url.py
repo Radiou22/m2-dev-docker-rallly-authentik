@@ -37,7 +37,7 @@ def update_environment(filename, origin):
     filename.write_text("\n".join([f"PUBLIC_BASE_URL={origin}", *lines]) + "\n")
 
 
-def configure_authentik(root):
+def configure_authentik(root, compose):
     source = """
 from os import environ
 
@@ -52,31 +52,40 @@ with transaction.atomic():
     tenant.save(update_fields=["base_url"])
     call_command("apply_blueprint", "custom/rallly.yaml")
 """
-    command = ["docker", "compose", "exec", "-T", "authentik_worker", "ak", "shell"]
+    command = [*compose, "exec", "-T", "authentik_worker", "ak", "shell"]
     result = subprocess.run(command, input=source, text=True, capture_output=True, cwd=root)
 
     if result.returncode != 0:
         raise RuntimeError("Authentik configuration failed; inspect docker compose logs authentik_worker")
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("origin", type=parse_origin, help="https://xxxx.ngrok-free.app or http://rallly.localhost")
-    args = parser.parse_args()
+    parser.add_argument("--email-login", action="store_true", help="Enable email login with the local Mailpit inbox")
+    args = parser.parse_args(argv)
     root = Path(__file__).resolve().parents[1]
     filename = root / ".env"
 
     if not filename.is_file():
         parser.error("Create .env from .env.example and fill in its secrets first")
 
+    compose = ["docker", "compose", "-f", "docker-compose.yaml"]
+
+    if args.email_login:
+        compose.extend(["-f", "docker-compose.email.yaml"])
+
     update_environment(filename, args.origin)
-    subprocess.run(["docker", "compose", "config", "--quiet"], cwd=root, check=True)
-    subprocess.run(["docker", "compose", "up", "-d", "--wait", "--wait-timeout", "240"], cwd=root, check=True)
-    configure_authentik(root)
+    subprocess.run([*compose, "config", "--quiet"], cwd=root, check=True)
+    subprocess.run([*compose, "up", "-d", "--wait", "--wait-timeout", "240"], cwd=root, check=True)
+    configure_authentik(root, compose)
 
     print(f"Rallly: {args.origin}/")
     print(f"Authentik: {args.origin}/authentik/")
     print(f"OIDC callback: {args.origin}/api/auth/callback/oidc")
+
+    if args.email_login:
+        print("Mailpit (local only): http://localhost:8025")
 
 
 if __name__ == "__main__":

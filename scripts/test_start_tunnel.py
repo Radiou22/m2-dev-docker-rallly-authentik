@@ -14,6 +14,11 @@ spec = importlib.util.spec_from_file_location("start_tunnel", filename)
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 
+url_filename = filename.with_name("set-public-url.py")
+url_spec = importlib.util.spec_from_file_location("set_public_url", url_filename)
+url_module = importlib.util.module_from_spec(url_spec)
+url_spec.loader.exec_module(url_module)
+
 
 class NgrokTunnelTests(unittest.TestCase):
     def make_tunnel(self, output):
@@ -155,10 +160,24 @@ class LauncherTests(unittest.TestCase):
     def test_ctrl_c_stops_tunnel_and_restores_previous_origin(self):
         self.assertEqual(module.main([]), 0)
         self.assertEqual(self.apply.call_args_list, [
-            call(self.root, "https://demo.ngrok-free.app"),
+            call(self.root, "https://demo.ngrok-free.app", email_login=False),
             call(self.root, "http://rallly.localhost"),
         ])
         self.tunnel.stop.assert_called_once()
+
+    def test_email_login_is_enabled_only_for_the_public_session(self):
+        self.assertEqual(module.main(["--email-login"]), 0)
+        self.assertEqual(self.apply.call_args_list, [
+            call(self.root, "https://demo.ngrok-free.app", email_login=True),
+            call(self.root, "http://rallly.localhost"),
+        ])
+        self.tunnel.stop.assert_called_once()
+
+    def test_failed_email_configuration_restores_the_base_configuration(self):
+        self.apply.side_effect = [subprocess.CalledProcessError(1, "configuration"), None]
+
+        self.assertEqual(module.main(["--email-login"]), 1)
+        self.assertEqual(self.apply.call_args_list[-1], call(self.root, "http://rallly.localhost"))
 
     def test_failed_configuration_also_restores_previous_origin(self):
         self.apply.side_effect = [subprocess.CalledProcessError(1, "configuration"), None]
@@ -186,6 +205,45 @@ class LauncherTests(unittest.TestCase):
 
         self.assertEqual(module.main([]), 1)
         self.tunnel.stop.assert_called_once()
+
+
+class EmailConfigurationTests(unittest.TestCase):
+    def test_launcher_passes_email_option_to_url_script(self):
+        root = filename.resolve().parents[1]
+
+        with patch.object(module.subprocess, "run") as run:
+            module.apply_public_url(root, "https://demo.ngrok-free.app", email_login=True)
+
+        self.assertEqual(run.call_args.args[0][-2:], ["https://demo.ngrok-free.app", "--email-login"])
+
+    def test_overlay_is_used_for_validation_startup_and_authentik(self):
+        compose = ["docker", "compose", "-f", "docker-compose.yaml", "-f", "docker-compose.email.yaml"]
+
+        with (
+            patch.object(url_module.Path, "is_file", return_value=True),
+            patch.object(url_module, "update_environment"),
+            patch.object(url_module.subprocess, "run") as run,
+            patch.object(url_module, "configure_authentik") as configure,
+            patch("builtins.print"),
+        ):
+            url_module.main(["http://rallly.localhost", "--email-login"])
+
+        self.assertEqual(run.call_args_list[0].args[0], [*compose, "config", "--quiet"])
+        self.assertEqual(run.call_args_list[1].args[0], [*compose, "up", "-d", "--wait", "--wait-timeout", "240"])
+        self.assertEqual(configure.call_args.args[1], compose)
+
+    def test_default_configuration_excludes_email_overlay(self):
+        with (
+            patch.object(url_module.Path, "is_file", return_value=True),
+            patch.object(url_module, "update_environment"),
+            patch.object(url_module.subprocess, "run") as run,
+            patch.object(url_module, "configure_authentik"),
+            patch("builtins.print"),
+        ):
+            url_module.main(["http://rallly.localhost"])
+
+        for invocation in run.call_args_list:
+            self.assertNotIn("docker-compose.email.yaml", invocation.args[0])
 
 
 if __name__ == "__main__":

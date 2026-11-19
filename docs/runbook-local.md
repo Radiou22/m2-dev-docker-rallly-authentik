@@ -25,7 +25,7 @@ Rallly est accessible sur <http://rallly.localhost> et Authentik sur
 configurer `akadmin` sur <http://rallly.localhost/authentik/if/flow/initial-setup/>.
 Rallly utilise Authentik pour la connexion ; voir [la configuration OIDC](authentik-oidc.md).
 
-Seul Traefik publie un port. Les accès directs aux applications et aux bases
+Dans le mode habituel, seul Traefik publie un port. Les accès directs aux applications et aux bases
 ne sont plus exposés. Si nécessaire, ajouter
 `127.0.0.1 rallly.localhost` au fichier hosts.
 
@@ -62,7 +62,40 @@ Si ngrok s'arrête avant de fournir une URL, consulter `--verbose`, lancer
 `ngrok config add-authtoken TON_TOKEN`. Les vérifications HTTP du script utilisent
 l'en-tête ngrok prévu pour les clients automatisés.
 
+## Vérification email avec Mailpit
+
+```bash
+python3 scripts/start-tunnel.py --email-login
+```
+
+L'option applique `docker-compose.email.yaml` : formulaire email activé dans
+Rallly, SMTP interne `mailpit:1025`, boîte de réception sur
+<http://localhost:8025>. Saisir une adresse de test dans Rallly puis récupérer
+le code dans Mailpit. Aucun email ne part vers une boîte réelle. L'interface
+Mailpit reste accessible uniquement depuis l'hôte, en dehors du tunnel.
+Authentik reste disponible, mais une connexion email ne consulte pas ses groupes.
+
+Pour tester uniquement en local :
+
+```bash
+python3 scripts/set-public-url.py http://rallly.localhost --email-login
+```
+
+À l'arrêt du lanceur, le mode défini dans `.env` est rétabli. Pour revenir
+manuellement au mode habituel et supprimer la boîte de test :
+
+```bash
+python3 scripts/set-public-url.py http://rallly.localhost
+docker compose -f docker-compose.yaml -f docker-compose.email.yaml rm -sf mailpit
+```
+
+Mailpit conserve les messages tant que son conteneur existe ; la suppression
+du conteneur efface cette boîte de test.
+
 ## Arrêt
 
 `docker compose down` arrête les services en conservant les volumes PostgreSQL
 et les fichiers Authentik. L'option `--volumes` supprime toutes ces données.
+Si Mailpit a été lancé, utiliser
+`docker compose -f docker-compose.yaml -f docker-compose.email.yaml down`
+pour arrêter également ce service.

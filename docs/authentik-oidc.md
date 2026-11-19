@@ -121,17 +121,59 @@ Il vérifie aussi que réappliquer le blueprint conserve les membres et ne dupli
 Il crée des comptes temporaires sans mot de passe utilisable dans une transaction
 annulée à la fin, y compris en cas d'échec. Il ne laisse aucun compte de test.
 
-Pour vérifier ensuite le parcours navigateur, utiliser un compte avec une adresse mail,
-l'ajouter successivement à chaque groupe, puis relancer la connexion depuis une
-session privée sur `http://rallly.localhost/login`. Le groupe autorisé doit permettre
-le retour à Rallly ; le groupe refusé doit afficher un refus côté Authentik.
+## Démo navigateur
+
+Préparer un compte de démonstration par groupe avec des adresses e-mail
+distinctes. Garder une session administrateur séparée pour la préparation.
+Utiliser l’origine locale `http://rallly.localhost` ou l’URL affichée par
+`python3 scripts/start-tunnel.py`. Pour une démo à distance, tester le lien
+depuis un autre appareil et garder le terminal du tunnel ouvert. Transmettre
+les identifiants de test séparément et renouveler ceux déjà publiés s’ils
+sont encore utilisés. [Démarrage de la démo](../README.md#hébergement-de-linstance-de-test-pour-démo)
+
+| Scénario | Manipulation | Résultat attendu |
+| --- | --- | --- |
+| SSO autorisé | En navigation privée, ouvrir `/login` sur l’origine active et se connecter avec le compte du groupe `rallly-allowed`. | Retour d’Authentik vers Rallly et session au nom du compte de test. Si nécessaire, terminer le profil au premier accès. |
+| SSO refusé | Fermer la session privée et en ouvrir une autre. Repartir de `/login` avec le compte du groupe `rallly-denied`. | Authentik affiche un refus et la connexion Rallly échoue. |
+| Inscription externe | Ouvrir une invitation neuve en navigation privée, créer le compte, puis ouvrir `/login` sur la même origine. | Le compte externe est actif et appartient à `rallly-allowed`. Il peut se connecter à Rallly via Authentik. |
+
+Le test de découverte OIDC du lanceur confirme que le tunnel atteint Authentik
+avec le bon émetteur. Pour la soutenance, conserver aussi les résultats du
+parcours navigateur et des captures sans mots de passe ni jetons.
 
 ## Invitation externe
 
-- [ ] Configurer le flux d'invitation adapté.
-- [ ] Configurer le SMTP de laboratoire si le flux choisi l'exige.
-- [ ] Inviter une adresse de test contrôlée par l'équipe.
-- [ ] Vérifier la réception, l'activation et l'accès.
-- [ ] Documenter les étapes et les limites.
+Le blueprint de cette branche crée l’application et les groupes. Préparer le
+flux d’inscription séparément dans Authentik.
 
-Ne pas considérer ces cases comme réalisées avant d'avoir testé le flux réel.
+1. Dans **Flows and Stages → Flows**, créer ou ouvrir le flux `invitation-rallly`.
+   Choisir **Enrollment** et exiger une session non authentifiée.
+2. Lier les stages dans l’ordre suivant.
+
+   | Ordre | Stage | Réglage de démo |
+   | --- | --- | --- |
+   | 0 | **Invitation** | Exiger un lien valide. Désactiver la poursuite sans invitation. |
+   | 10 | **Prompt** | Demander le nom d’utilisateur, le nom, l’e-mail, le mot de passe et sa confirmation. Utiliser les clés `username`, `name`, `email`, `password` et `password_repeat`. |
+   | 20 | **User Write** | Autoriser la création au besoin. Choisir le type **External**, laisser la création de comptes inactifs désactivée et affecter le groupe `rallly-allowed`. |
+   | 30 | **User Login** | Ouvrir la session Authentik du nouvel invité. |
+
+3. Dans **Directory → Invitations**, créer une invitation liée à ce flux,
+   activer **Single use** et choisir une expiration (par exemple 24 h).
+   Copier le lien généré depuis la même origine que le SSO. Pour cette démo,
+   partager le lien en privé. L’envoi par e-mail nécessite un SMTP configuré
+   dans Authentik.
+4. L’invité ouvre le lien en navigation privée et termine le formulaire dans
+   le même onglet. Avec la version utilisée dans le projet, un lien à usage
+   unique peut être consommé dès l’ouverture du formulaire. Préparer un
+   nouveau lien si le parcours est abandonné.
+5. Vérifier dans **Directory → Users** que le compte est actif, externe et
+   membre de `rallly-allowed`. Toujours dans la session de l’invité, ouvrir
+   Rallly sur l’origine active et vérifier le retour SSO. Essayer ensuite le
+   lien déjà utilisé dans une nouvelle session privée et vérifier le refus.
+
+Le parcours invitation → compte externe actif → connexion Rallly a été
+validé sur l’ancienne stack locale. Rejouer la recette sur la configuration
+actuelle et relever les résultats avant la soutenance.
+
+[Créer une invitation dans Authentik](https://docs.goauthentik.io/users-sources/user/invitations/) ·
+[Configurer le stage User Write](https://docs.goauthentik.io/add-secure-apps/flows-stages/stages/user_write/)

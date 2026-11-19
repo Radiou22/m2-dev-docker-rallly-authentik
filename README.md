@@ -116,6 +116,11 @@ runner pour la durée du job ; elle n'est pas publiée dans un registre.
 
 ## Features ajoutées
 - **Feature libre** : (UI/UX) correction de l'alignement de la zone d'entrée du code de vérification de l'adresse email et de l'overlapping de certains champs
+- **Catalogue** — quota de votes « Oui » par créneau et blocage des votes sur les créneaux passés.
+- **Feature libre** — afficher le nom complet d’un participant au survol dans le tableau des votes.
+- **Amélioration complémentaire** — centrer les cases de saisie du code de vérification reçu par e-mail.
+
+Voir [les scénarios de démonstration et les captures](docs/features.md).
 
 ## Hébergement de l'instance de test pour démo
 
@@ -198,9 +203,9 @@ python3 -B scripts/test_start_tunnel.py
 
 # Features
 
-- Overlap d'éléments
-  ![overlap](docs/screenshots/overlap.png)
-- Quota
-  ![quota](docs/screenshots/quota.png)
-- Blocage des votes après échéance
-  ![echeance](docs/screenshots/blocage-votes.png)
+- Affichage du nom complet au survol
+  ![Nom complet affiché au survol](docs/screenshots/overlap.png)
+- Refus d’un vote lorsque le quota est atteint
+  ![Message de refus sur un créneau complet](docs/screenshots/quota.png)
+- Blocage des votes sur les créneaux passés
+  ![Créneau passé non sélectionnable](docs/screenshots/blocage-votes.png)
